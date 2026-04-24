@@ -38,7 +38,7 @@ export default function CallToAction({
                                 alt={badge.alt}
                                 className="h-4 w-[22px] object-contain sm:h-[16px] sm:w-[25px] md:h-[16px] md:w-[25px]"
                             />
-                            <span className="text-[12px] font-semibold text-[#171717] sm:text-[13px] md:text-[12px]">
+                            <span className="text-[10px] font-semibold text-[#171717] sm:text-[12px] md:text-[12px]">
                                 {badge.label}
                             </span>
                         </div>
@@ -47,7 +47,7 @@ export default function CallToAction({
             </div>
 
             {/* CTA Button — sm: wide centered pill; md+: original wide padding */}
-            <Link href={buttonHref} className="flex w-full justify-center md:block md:w-auto md:max-w-[700px] max-w-[400px] ">
+            <Link href={buttonHref} className="flex w-full justify-center md:block md:w-auto md:max-w-[700px] max-w-[400px] md:p-0 p-2.5 pt-0">
                 <button className="w-full max-w-full cursor-pointer rounded-full bg-[#FF5733] px-6 py-[15px] text-center text-[15px] font-bold text-white transition-colors hover:bg-[#E64B29] sm:max-w-xl md:w-auto md:max-w-[700px] md:px-[150px] md:text-[16px]">
                     {buttonText}
                 </button>

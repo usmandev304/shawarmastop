@@ -17,7 +17,9 @@ export default function OrderLocationStoreHero({ branchIndex }: OrderLocationSto
         ? "DHA"
         : branch.id === "pia"
           ? "PIA"
-          : "Gulberg";
+          : branch.id === 'gullbery'
+            ? "Gulberg"
+            : "Karachi";
 
   return (
     <section className="relative w-full min-h-[min(520px,80vh)] overflow-hidden bg-neutral-900">

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import profile from '../../../images/navbar-icons/profile.png';
 import { usePathname } from 'next/navigation';
-import { Menu, ChevronDown } from 'lucide-react';
+import { Menu, ChevronDown, X } from 'lucide-react';
 import { useState } from 'react';
 import { useCart } from '@/app/context/CartContext';
 import { Poppins } from 'next/font/google';
@@ -31,6 +31,7 @@ const profilePageNavLinks = [
 
 export default function Navbar() {
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { itemCount } = useCart();
   const pathname = usePathname();
 
@@ -68,7 +69,13 @@ export default function Navbar() {
       >
         <div className="max-w-[1317px] mx-auto flex items-center justify-between ">
           <div className="flex items-center w-full md:w-auto justify-between md:gap-[50px]">
-            <button className="md:hidden">
+            <button
+              className="md:hidden"
+              type="button"
+              onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+              aria-label="Toggle mobile menu"
+              aria-expanded={isMobileMenuOpen}
+            >
               <Menu size={28} />
             </button>
 
@@ -174,6 +181,50 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
+      <div
+        className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-300 md:hidden ${
+          isMobileMenuOpen ? 'opacity-100' : 'pointer-events-none opacity-0'
+        }`}
+        onClick={() => setIsMobileMenuOpen(false)}
+      />
+      <aside
+        className={`fixed left-0 top-0 z-50 h-full w-[280px] bg-[#F95233] px-6 py-6 text-white shadow-2xl transition-transform duration-300 ease-out md:hidden ${
+          isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
+      >
+        <div className="mb-8 flex items-center justify-between">
+          <span className="text-lg font-semibold">Menu</span>
+          <button
+            type="button"
+            onClick={() => setIsMobileMenuOpen(false)}
+            aria-label="Close mobile menu"
+          >
+            <X size={24} />
+          </button>
+        </div>
+
+        <div className="flex flex-col gap-5">
+          {(isProfile ? profilePageNavLinks : navLinks).map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`text-[18px] font-semibold ${isProfile ? getProfileNavLinkClass(link.href) : getNavLinkClass(link.href)}`}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              {link.name}
+            </Link>
+          ))}
+          {!isProfile && (
+            <Link
+              href="/contact"
+              className="text-[18px] font-semibold"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Contact
+            </Link>
+          )}
+        </div>
+      </aside>
       <Cart isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </>
   );

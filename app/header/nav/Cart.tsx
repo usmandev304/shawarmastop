@@ -47,7 +47,7 @@ export default function Cart({ isOpen, onClose }: CartProps) {
         {/* Cart Item */}
         <div className="flex-1 overflow-y-auto space-y-6">
           {cartItems.map((item) => (
-            <div key={item.id} className="flex gap-4 border-b pb-4">
+            <div key={item.id} className="flex gap-4 border-b border-gray-300 pb-4">
               <div className="w-24 h-24 relative rounded-lg bg-gray-100 overflow-hidden">
                 <Image
                   src={item.image}
@@ -57,7 +57,7 @@ export default function Cart({ isOpen, onClose }: CartProps) {
                 />
               </div>
               <div className="flex-1">
-                <h3 className="font-bold text-black text-lg">{item.name}</h3>
+                <h3 className="font-bold text-black lg:text-lg text-[14px]">{item.name}</h3>
                 <p className="text-xs text-gray-500 mb-2">
                   {typeof item.description === 'string'
                     ? item.description
@@ -73,7 +73,7 @@ export default function Cart({ isOpen, onClose }: CartProps) {
                       <Minus size={14} />
                     </button>
 
-                    <span className="px-4 py-1 font-semibold text-black border-x border-gray-300">
+                    <span className="px-4 py-1 font-semibold text-black ">
                       {item.quantity}
                     </span>
 
@@ -100,21 +100,21 @@ export default function Cart({ isOpen, onClose }: CartProps) {
         </div>
 
         {/* Footer */}
-        <div className="mt-auto pt-6 border-t">
-          <div className="flex justify-between text-xl font-bold mb-4 text-black">
+        <div className="mt-auto pt-6 ">
+          <div className="flex justify-between lg:text-xl text-[16px] font-bold mb-4 text-black">
             <span>Subtotal:</span>
             <span className="text-[#FF4D30]">Rs {subtotal}</span>
           </div>
           <Link
             href="/checkout"
             onClick={onClose}
-            className="block w-full bg-[#FF4D30] text-white py-4 rounded-full font-bold text-lg hover:bg-[#e6452b] transition-colors shadow-lg active:scale-95 text-center"
+            className="block w-full bg-[#FF4D30] text-white py-4 rounded-full font-bold md:text-lg text-[16px] hover:bg-[#e6452b] transition-colors shadow-lg active:scale-95 text-center"
           >
             Checkout
           </Link>
           <Link
             href="/order"
-            className="mt-3 block w-full  text-black hover:underline py-2 rounded-full text-lg text-center hover:bg-[#FFF1EE] transition-colors"
+            className="mt-3 block w-full  text-black hover:underline py-2 rounded-full md:text-lg text-[14px] text-center hover:bg-[#FFF1EE] transition-colors"
           >
             Continue Ordering
           </Link>

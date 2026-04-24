@@ -81,7 +81,7 @@ function FaqItem({ question, answer }: { question: string; answer: ReactNode }) 
                 onClick={() => setIsOpen(!isOpen)}
                 className="w-full flex justify-between items-center text-left gap-4"
             >
-                <h3 className="md:text-[20px] font-[600] text-[#1a1a1a]">
+                <h3 className="md:text-[20px] sm:text-[17px] text-[14px] font-[600] text-[#1a1a1a]">
                     {question}
                 </h3>
                 <div className={`bg-[#ff5a30] p-1 rounded-full transition-transform duration-300 ${isOpen ? '' : 'rotate-180'}`}>
@@ -90,7 +90,7 @@ function FaqItem({ question, answer }: { question: string; answer: ReactNode }) 
             </button>
 
             {isOpen && (
-                <div className="mt-4 md:text-[16px] leading-relaxed md:max-w-[870px] ">
+                <div className="mt-4 md:text-[16px] text-[14px] leading-relaxed md:max-w-[870px] ">
                     {answer}
                 </div>
             )}

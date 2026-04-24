@@ -52,23 +52,24 @@ export default function CheckoutPage() {
   };
 
   return (
-    <section className={`${poppins.className} bg-white min-h-screen px-6 pt-20 md:px-12 lg:px-20 md:mb-20`}>
-      <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+    <section className={`${poppins.className} bg-white min-h-screen px-6 md:pt-20 pt-10 md:px-12 lg:px-20 md:mb-20 mb-10`}>
+      <div className="max-w-[1200px] mx-auto paymentChecked  flex flex-col-reverse md:flex-col  md:grid lg:grid-cols-2 gap-10 lg:gap-16">
         <div>
-          <h1 className="text-black md:text-[40px] font-[400] mb-15">Checkout</h1>
+          <h1 className="text-black md:text-[40px] font-[400] mb-15 hidden md:block">Checkout</h1>
+          <h1 className="text-black md:text-[40px] font-[600] text-[24px] font-[400] mb-10 block md:hidden">Delivery details</h1>
 
           <div className="space-y-6">
             <div>
-              <p className="text-black text-[20px] font-[500] mb-3">Contact</p>
+              <p className="text-black md:text-[20px] font-[500] mb-3">Contact</p>
               <input
                 type="text"
                 placeholder="Enter Mobile Number"
-                className="w-full border border-[#E6E6E6] rounded-2xl px-5 py-4 text-black placeholder:text-[#9A9A9A] outline-none font-[400]"
+                className="w-full border border-[#E6E6E6] rounded-2xl px-5 py-4 text-black placeholder:text-[#9A9A9A] outline-none font-[400] md:text-[16px]"
               />
             </div>
 
             <div>
-              <p className="text-black text-[20px] font-[500] mb-3">Delivery</p>
+              <p className="text-black md:text-[20px] font-[500] mb-3">Delivery</p>
               <div className="space-y-4">
                 <input
                   type="text"
@@ -127,7 +128,7 @@ export default function CheckoutPage() {
             )}
 
             <div>
-              <p className="text-black text-[20px] font-[500] mb-3">Payment</p>
+              <p className="text-black md:text-[20px] font-[500] mb-3">Payment</p>
               <select className="w-full border border-[#E6E6E6] rounded-2xl px-5 py-4 text-black outline-none text-[16px] font-[400]">
                 <option>Cash On Delivery</option>
               </select>
@@ -138,34 +139,38 @@ export default function CheckoutPage() {
             </button>
           </div>
         </div>
+        
 
         <div className="pt-3">
-        <div className="flex justify-end mb-10">
+        <div className="flex justify-end md:mb-10">
+         <div className="flex justify-between w-full h-fill">
+          <h1 className="text-black md:text-[40px] text-[17px] font-[400] md:mb-15 block md:hidden">Checkout</h1>
   <Link 
     href="/order" 
-    className="text-black text-2xl font-[300] underline decoration-2 "
+    className="text-black md:text-2xl text-[15px] font-[300] underline decoration-2 "
   >
     Continue Ordering
   </Link>
+  </div>
 </div>
 
           <div className="space-y-6">
             {cartItems.map((item) => (
               <div key={item.id} className="flex items-center justify-between gap-4 text-[16px] font-[400]">
                 <div className="flex items-center gap-4">
-                  <div className="w-25 h-25 relative rounded-md overflow-hidden bg-[#F5F3ED] p-1">
+                  <div className="md:w-25 md:h-25 w-15 h-15 relative rounded-md overflow-hidden md:bg-[#F5F3ED] p-1">
                     <Image src={item.image} alt={item.name} fill className="object-contain" />
                   </div>
                   <div>
-                    <p className="text-black text-[18px] font-[700]">{item.name}</p>
-                    <p className="text-[#3B3B3B] text-[15px] font-[400] max-w-[290px]">
+                    <p className="text-black md:text-[18px] text-[15px] font-[700]">{item.name}</p>
+                    <p className="text-[#3B3B3B] md:text-[15px] text-[12px] font-[400] md:max-w-[290px] max-w-[240px]">
                       {typeof item.description === 'string'
                         ? item.description
                         : 'Grilled whole chicken, marinated in Middle Eastern spices'}
                     </p>
                   </div>
                 </div>
-                <p className="text-black text-[18px] font-[700]">RS {item.price * item.quantity}</p>
+                <p className="text-black md:text-[18px] text-[14px] font-[700]">RS {item.price * item.quantity}</p>
               </div>
             ))}
           </div>

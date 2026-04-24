@@ -36,8 +36,7 @@ export default function PiaBranchPage() {
           logo={Shawarmastop}
           title="PIA Housing Gets a Taste Upgrade"
           description="Shawarma Stop proudly opens its branch in PIA Housing Society, bringing its popular menu closer to the community. With fresh ingredients, bold flavors, and a friendly environment, this outlet is ideal for everyday cravings and family meals."
-          description2="Experience quick service and consistent quality, making every visit a delicious and 
-memorable one."
+          secondParagraph="Experience quick service and consistent quality, making every visit a delicious and memorable one."
           ctaLabel="Order Now"
           ctaHref="/order"
           openingHoursTitle="Opening Hours"

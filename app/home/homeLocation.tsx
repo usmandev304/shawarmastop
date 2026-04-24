@@ -11,7 +11,7 @@ const AUTO_SLIDE_MS = 6000;
 const total = branchLocations.length;
 
 const navButtonClass =
-  "absolute top-1/2 z-20 -translate-y-1/2 flex h-11 w-11 items-center justify-center rounded-full border-2 border-[#E55A38] text-[#E55A38] bg-white/90 shadow-sm transition hover:bg-white hover:scale-105 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80";
+  "absolute top-1/2 z-20 -translate-y-1/2 flex md:h-11 md:w-11 h-6 w-6 items-center justify-center rounded-full border-2 border-[#E55A38] text-[#E55A38] bg-white/90 shadow-sm transition hover:bg-white hover:scale-105 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80";
 
 export default function HomeLocation() {
   const [index, setIndex] = useState(0);
@@ -56,9 +56,9 @@ export default function HomeLocation() {
 
   return (
     <>
-      <section className="px-4 pt-9 md:pb-[140px] flex justify-center">
+      <section className="px-4 pt-9 md:pb-[140px] pb-[100px] flex justify-center">
         <div
-          className="relative w-full max-w-[1300px] m-auto min-h-[400px] md:rounded-[20px] overflow-hidden flex flex-col items-center justify-center text-center shadow-xl bg-neutral-900"
+          className="relative w-full max-w-[1300px] m-auto md:min-h-[400px] sm:min-h-[350px] h-[300px] md:rounded-[20px] overflow-hidden flex flex-col items-center justify-center text-center shadow-xl bg-neutral-900"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           onFocusCapture={() => setIsPaused(true)}
@@ -114,11 +114,11 @@ export default function HomeLocation() {
                 exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -16 }}
                 transition={textTransition}
               >
-                <h2 className="md:text-[40px] text-2xl sm:text-3xl font-bold text-white mb-3 tracking-tight">
+                <h2 className="md:text-[40px] text-[15px] sm:text-3xl font-bold text-white mb-3 tracking-tight">
                   {current.title}
                 </h2>
 
-                <p className="text-white font-light md:text-[16px] text-sm mb-4 font-sans max-w-[580px] min-h-16 md:min-h-14">
+                <p className="text-white font-light md:text-[16px] text-[9px] mb-4 font-sans max-w-[580px] min-h-16 md:min-h-14">
                   {current.description}
                 </p>
 
@@ -128,7 +128,7 @@ export default function HomeLocation() {
 
             <Link
               href={viewStoreHref}
-              className="bg-white text-[#E55A38] md:px-[90px] px-8 py-4 rounded-full font-bold text-base hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 active:scale-95 shadow-md"
+              className="bg-white text-[#E55A38] md:px-[90px]  md:text-[16px] text-[9px] md:px-8 md:py-4 px-7 py-3 rounded-full font-bold text-base hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 active:scale-95 shadow-md"
             >
               View store
             </Link>

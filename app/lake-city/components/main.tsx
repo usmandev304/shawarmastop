@@ -6,7 +6,7 @@ type LakeCityMainProps = {
   logo: StaticImageData;
   title: string;
   description: string;
-  description2: string;
+  secondParagraph?: string;
   ctaLabel: string;
   ctaHref: string;
   openingHoursTitle: string;
@@ -19,7 +19,7 @@ export default function Main({
   logo,
   title,
   description,
-  description2,
+  secondParagraph,
   ctaLabel,
   ctaHref,
   openingHoursTitle,
@@ -31,8 +31,10 @@ export default function Main({
     <div className="mt-[30px] flex flex-col items-center justify-center md:mt-[50px] lg:mt-[27px]">
       <Image src={logo} alt="Shawarma Stop" className="lg:h-[155px] md:h-[120px] sm:h-[80px] max-w-[250px] lg:max-w-[690px] md:max-w-[505px] sm:max-w-[350px] object-contain" priority />
       <h3 className="mt-2 text-center md:text-[22px] lg:text-[27px] sm:text-[14px] text-[24px] max-w-[780px]">{title}</h3>
-      <p className="mt-4 text-center text-[14px] sm:max-w-[440px] md:max-w-[600px] lg:max-w-[780px] font-[400] leading-relaxed lg:mt-[25px] lg:text-[16px] text-[14px">{description}</p>
-      <p className="mt-4 text-center text-[14px] sm:max-w-[440px] md:max-w-[600px] lg:max-w-[680px] font-[400] leading-relaxed lg:mt-[0px] lg:text-[16px]">{description2}</p>
+      <p className="mt-4 text-center text-[14px] sm:max-w-[440px] md:max-w-[600px] lg:max-w-[780px] font-[400] leading-relaxed lg:mt-[25px] lg:text-[16px] text-[14px]">{description}</p>
+      {secondParagraph ? (
+        <p className="mt-4 text-center text-[14px] sm:max-w-[440px] md:max-w-[600px] lg:max-w-[680px] font-[400] leading-relaxed lg:mt-[0px] lg:text-[16px]">{secondParagraph}</p>
+      ) : null}
       <div className="mt-7">
         <Link href={ctaHref}>
           <button className="cursor-pointer rounded-full bg-[#F95233] px-14 py-3 text-white">{ctaLabel}</button>

@@ -3,9 +3,9 @@ export default function ContactHeader() {
     <section className="max-w-4xl mx-auto px-6 py-16 font-sans text-[#1a1a1a]">
       {/* Top Text Content */}
       <div className="mb-10">
-        <p className="text-xl md:text-2xl leading-relaxed mb-8 text-gray-800">
-          Whether you have a question, feedback, or just want to say hi, we're 
-          always here for you. Reach out and let us know how we can make your 
+        <p className="text-xl md:text-2xl text-[17px] leading-relaxed mb-8 text-gray-800">
+          Whether you have a question, feedback, or just want to say hi, we're
+          always here for you. Reach out and let us know how we can make your
           experience even better.
         </p>
 
@@ -30,7 +30,7 @@ export default function ContactHeader() {
             className="w-full border border-gray-300 rounded-md p-3 outline-none focus:ring-1 focus:ring-orange-500 placeholder-gray-400"
           />
         </div>
-        
+
         <input
           type="email"
           placeholder="Email"
@@ -45,7 +45,7 @@ export default function ContactHeader() {
 
         <button
           type="submit"
-          className="bg-[#FF5A35] hover:bg-[#e44e2b] text-white font-semibold py-3 px-16 rounded-full transition-colors duration-200 text-lg shadow-sm"
+          className="bg-[#FF5A35] hover:bg-[#e44e2b] text-white font-semibold sm:py-3 sm:px-16 w-full py-2.5 rounded-full transition-colors duration-200 md:text-lg text-[15px] shadow-sm"
         >
           Send
         </button>

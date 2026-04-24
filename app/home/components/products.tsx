@@ -3,6 +3,7 @@ import Image, { StaticImageData } from 'next/image';
 import { Inter } from 'next/font/google';
 import { useCart } from '@/app/context/CartContext';
 import { useState } from 'react';
+import { addToCartDatabase } from '@/lib/api';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -79,15 +80,22 @@ export default function Products({ items }: ProductGridProps) {
                     <div className="mt-2 hidden w-full items-center justify-between md:flex">
                         <button
                             type="button"
-                            onClick={() =>
+                            onClick={() => {
                                 addItem({
                                     id: `home-${product.id}-${product.title}`,
                                     name: product.title,
                                     description: product.description,
                                     image: product.image,
                                     price: Number(product.price),
-                                })
-                            }
+                                });
+                                addToCartDatabase({
+                                    id: `home-${product.id}-${product.title}`,
+                                    name: product.title,
+                                    description: product.description,
+                                    price: Number(product.price),
+                                    badge: product.badge,
+                                });
+                            }}
                             className="rounded-full bg-[#FF5733] px-[23px] py-[7px] text-[14px] font-bold text-white transition-colors hover:bg-[#E64B29]"
                         >
                             Add To Cart
@@ -100,15 +108,22 @@ export default function Products({ items }: ProductGridProps) {
                     {/* Below md: full-width CTA */}
                     <button
                         type="button"
-                        onClick={() =>
+                        onClick={() => {
                             addItem({
                                 id: `home-${product.id}-${product.title}`,
                                 name: product.title,
                                 description: product.description,
                                 image: product.image,
                                 price: Number(product.price),
-                            })
-                        }
+                            });
+                            addToCartDatabase({
+                                id: `home-${product.id}-${product.title}`,
+                                name: product.title,
+                                description: product.description,
+                                price: Number(product.price),
+                                badge: product.badge,
+                            });
+                        }}
                         className="mt-2 w-full rounded-full bg-[#FF5733] py-2 text-center text-[11px] font-bold text-white transition-colors hover:bg-[#E64B29] md:hidden"
                     >
                         Add To Cart

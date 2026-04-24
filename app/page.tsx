@@ -1,5 +1,6 @@
 'use client';
 import Main from "./home/main";
+import Location from "./location/location";
 import img from "../images/heroSection/img.png"
 import Image from "next/image";
 import sm from "../images/heroSection/sm.png"
@@ -105,6 +106,7 @@ export default function Home() {
       </section>
 
       <Main />
+      <Location />
     </>
   );
 }

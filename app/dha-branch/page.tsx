@@ -36,7 +36,7 @@ export default function DhaBranchPage() {
           logo={Shawarmastop}
           title="DHA Gets a Premium Flavor Hub"
           description="Shawarma Stop expands its presence with a vibrant branch in DHA Phase 4, Lahore. Known for its upscale surroundings and lively community, this location offers freshly prepared shawarmas, signature flavors, and a welcoming space where quality meets comfort for an exceptional dining experience."
-          description2="Enjoy a modern ambiance paired with quick service, making it perfect for both dine-in and takeaways. Every visit promises rich flavors, fresh ingredients, and a satisfying experience you’ll want to come back for."
+          secondParagraph="Enjoy a modern ambiance paired with quick service, making it perfect for both dine-in and takeaways. Every visit promises rich flavors, fresh ingredients, and a satisfying experience you’ll want to come back for."
           ctaLabel="Order Now"
           ctaHref="/order"
           openingHoursTitle="Opening Hours"

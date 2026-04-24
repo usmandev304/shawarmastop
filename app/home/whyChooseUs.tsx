@@ -29,7 +29,7 @@ const features = [
 export default function WhyChooseUs() {
     return (
         <>
-        <section className={`${poppins.className} w-full max-w-[1427px] mx-auto px-4 md:px-10 px-0 py-12 md:pt-24`}>
+        <section className={`${poppins.className} w-full max-w-[1427px] mx-auto px-4 md:px-10 px-0 md:pt-12 sm:pt-8 pt-12 md:pt-24`}>
             <div className="flex flex-col md:flex-row items-center gap-10 lg:gap-14 md:gap-10">
 
                 {/* ── Left: Overlapping Images Section ── */}
