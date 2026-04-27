@@ -31,7 +31,7 @@ const faqData = [
             <div className="mt-2">
                 <p className="font-semibold mb-2">Our branches are located at the following addresses:</p>
                 <ul className="list-disc pl-5 space-y-1">
-                    <li>Building #157, DHA Phase 4, Sector CCA, Lahore</li>
+                    <li>Building #157, DHA Phase 4, Sector CCA, Lahore - 52000</li>
                     <li>Plaza C-43-3, Commercial Area, Lake City, Lahore</li>
                     <li>39-D Block, PIA Housing Society, Lahore</li>
                     <li>95B-D/1, Main Boulevard, Gulberg III, Lahore</li>
@@ -43,7 +43,7 @@ const faqData = [
 
 export default function FaqSection() {
     return (
-        <>        <section className={`${poppins.className} lg:py-7 px-4 bg-white`}>
+        <>        <section className={`${poppins.className} lg:py-7 px-4 bg-white lg:mb-12`}>
             <div className="max-w-5xl mx-auto">
                 <SectionHeader
                     badgeImage={props}

@@ -84,7 +84,7 @@ function Frame1() {
   return (
     <>
     <div className={`${poppins.className} content-stretch flex flex-col lg:gap-[20px] md:gap-[15px] sm:gap-[12px] gap-3 items-center leading-[normal] lg:mb-[-75px] mb-[-45px] not-italic relative shrink-0 text-black text-center lg::pb-[50px] md:pb-[40px] sm:pb-[35px] pb-1 px-3`}>
-      <p className="font-semibold relative lg:text-[32px] md:text-[30px] sm:text-[28px] text-[16px] uppercase max-w-4xl">
+      <p className="font-semibold relative lg:text-[39px] md:text-[30px] sm:text-[28px] text-[16px] uppercase max-w-4xl">
         Where the Shawarma Stop Begin
       </p>
       <p className="relative md:text-[18px] lg:text-[20px] sm:text-[17px] text-[12px] lg:max-w-[860px] md:max-w-[700px] sm:max-w-[600px] max-w-[550px] w-full">Shawarma Stop began its journey in Lahore, Pakistan, with one simple goal — to serve bold flavors and unforgettable shawarma made with passion. From a single idea to four thriving branches, it has become a go-to spot where taste, quality, and consistency come together for every bite.</p>

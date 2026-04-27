@@ -9,8 +9,8 @@ import { useState } from 'react';
 import { useCart } from '@/app/context/CartContext';
 import { Poppins } from 'next/font/google';
 // Is line ko update karein
-const poppins = Poppins({ 
-  subsets: ['latin'], 
+const poppins = Poppins({
+  subsets: ['latin'],
   weight: ['200', '400', '500', '600', '700'] // Jo weights aap use kar rahe hain wo sab yahan add karein
 });
 
@@ -24,7 +24,7 @@ const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'Order Now', href: '/order' },
   { name: 'About', href: '/about' },
-  { name: 'Download', href: '/download' },
+  { name: 'Download Menu', href: '/download' },
 ];
 
 /** Shown only on /header/nav (profile) — match compact bar: Orders + Profile */
@@ -40,7 +40,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const getNavLinkClass = (href: string) =>
-    `text-[15px] md:text-[17x] lg:text-[20px] font-[400] ${poppins.className} transition-colors ${pathname === href ? 'text-[#E2F163]' : 'hover:text-white/80'
+    `text-[15px] md:text-[17x] lg:text-[18px] font-[500] ${poppins.className} transition-colors ${pathname === href ? 'text-[#E2F163]' : 'hover:text-white/80'
     }`;
 
   const getProfileNavLinkClass = (href: string) => {
@@ -97,27 +97,27 @@ export default function Navbar() {
             <div className="hidden md:flex items-center lg:gap-11 md:gap-6 ml-10">
               {isProfile
                 ? profilePageNavLinks.map((link) => (
-                    <Link
-                      key={link.name}
-                      href={link.href}
-                      className={getProfileNavLinkClass(link.href)}
-                    >
-                      {link.name}
-                    </Link>
-                  ))
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className={getProfileNavLinkClass(link.href)}
+                  >
+                    {link.name}
+                  </Link>
+                ))
                 : navLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className={getNavLinkClass(link.href)}
-                    >
-                      {link.name}
-                    </Link>
-                  ))}
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={getNavLinkClass(link.href)}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
             </div>
           </div>
 
-          <div className="flex items-center md:gap-4 sm:gap-4 gap-2 lg:gap-3 ml-auto cursor-pointer">
+          <div className="flex items-center md:gap-4 sm:gap-4 gap-3 lg:gap-6 ml-auto cursor-pointer">
             {!isProfile && (
               <>
                 <Link
@@ -133,34 +133,34 @@ export default function Navbar() {
               </>
             )}
             <div className="flex items-center gap-2 ml-auto">
-            {isProfile ? (
-              <Link
-                href="/"
-                className={`${userLinkClass} gap-2`}
-                title="Home"
-                aria-label="Go to home"
-              >
-                <Image
-                  src={profile}
-                  alt="User Account"
-                  className="w-[23px] h-[20px] md:w-[40px] md:h-[40px]"
-                />
-                <ChevronDown className="h-6 w-6 shrink-0 text-white" aria-hidden />
-              </Link>
-            ) : (
-              <Link
-                href="/header/nav"
-                className={userLinkClass}
-                title="Open orders and profile"
-                aria-label="Open orders and profile"
-              >
-                <Image
-                  src={user}
-                  alt="User Account"
-                  className="w-[23px] h-[20px] md:w-[26px] md:h-[26px]"
-                />
-              </Link>
-            )}
+              {isProfile ? (
+                <Link
+                  href="/"
+                  className={`${userLinkClass} gap-2`}
+                  title="Home"
+                  aria-label="Go to home"
+                >
+                  <Image
+                    src={profile}
+                    alt="User Account"
+                    className="w-[23px] h-[20px] md:w-[40px] md:h-[40px]"
+                  />
+                  <ChevronDown className="h-6 w-6 shrink-0 text-white" aria-hidden />
+                </Link>
+              ) : (
+                <Link
+                  href="/header/nav"
+                  className={userLinkClass}
+                  title="Open orders and profile"
+                  aria-label="Open orders and profile"
+                >
+                  <Image
+                    src={user}
+                    alt="User Account"
+                    className="w-[23px] h-[20px] md:w-[26px] md:h-[26px]"
+                  />
+                </Link>
+              )}
             </div>
 
 
@@ -186,15 +186,13 @@ export default function Navbar() {
         </div>
       </nav>
       <div
-        className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-300 md:hidden ${
-          isMobileMenuOpen ? 'opacity-100' : 'pointer-events-none opacity-0'
-        }`}
+        className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-300 md:hidden ${isMobileMenuOpen ? 'opacity-100' : 'pointer-events-none opacity-0'
+          }`}
         onClick={() => setIsMobileMenuOpen(false)}
       />
       <aside
-        className={`fixed left-0 top-0 z-50 h-full w-[280px] bg-[#F95233] px-6 py-6 text-white shadow-2xl transition-transform duration-300 ease-out md:hidden ${
-          isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
-        }`}
+        className={`fixed left-0 top-0 z-50 h-full w-[280px] bg-[#F95233] px-6 py-6 text-white shadow-2xl transition-transform duration-300 ease-out md:hidden ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+          }`}
       >
         <div className="mb-8 flex items-center justify-between">
           <span className="text-lg font-[600]">Menu</span>

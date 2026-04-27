@@ -1,4 +1,5 @@
-import OrderFooter from "./orderFooter";
+import ProfileFooter from "./profilePage/footer";
+
 
 export default function ProfileGroupLayout({
   children,
@@ -8,7 +9,7 @@ export default function ProfileGroupLayout({
   return (
     <section className="home-layout-wrapper min-h-screen bg-white">
       {children}
-      {/* <OrderFooter /> */}
+      <ProfileFooter />
     </section>
   );
 }

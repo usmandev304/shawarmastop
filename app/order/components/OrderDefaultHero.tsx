@@ -9,7 +9,7 @@ export default function OrderDefaultHero() {
           <p className="font-sans text-lg font-[400] capitalize md:text-[24px] md:font-[600]">
             Our Menu
           </p>
-          <p className="mt-4 break-words font-sans text-[clamp(1.75rem,6vw,5rem)] font-semibold capitalize leading-[50px] tracking-tighter md:mt-2 md:leading-[70px] md:font-semibold lg:leading-[100px] lg:text-[4vw]">
+          <p className="mt-4 break-words font-sans text-[clamp(1.75rem,6vw,5rem)] font-[700] capitalize leading-[50px] tracking-tighter md:mt-2 md:leading-[70px] md:font-[700] lg:leading-[100px] lg:text-[4vw]">
             Tasty Treats for Every Craving
           </p>
           <p className="mt-2 max-w-[590px] font-sans text-base font-[300] leading-relaxed md:mt-4 md:max-w-[590px] md:text-[18px] md:font-[400] lg:max-w-[630px] lg:text-[20px]">

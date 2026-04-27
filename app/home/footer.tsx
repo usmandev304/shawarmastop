@@ -19,10 +19,10 @@ export default function Footer() {
             <div className="max-w-[1387px] m-auto border-b border-[rgba(255,255,255,0.2)] pb-[64px] flex  flex-wrap flex-col lg:flex-row justify-between gap-10">
                 
                 {/* Left Section: Logo, Info & Locations */}
-                <div className="flex flex-col md:flex-row flex-1 gap-10 lg:gap-85">
+                <div className="flex flex-col md:flex-row flex-1 gap-10 lg:gap-20">
                     
                     {/* Logo and Social Text */}
-                    <div className="flex flex-col gap-6 max-w-[300px]">
+                    <div className="flex flex-col gap-6 max-w-[500px]">
                         <div className="h-[38px] w-[230px] relative">
                             <Image
                                 alt="Shawarma Stop Logo"
@@ -31,14 +31,14 @@ export default function Footer() {
                                 fill
                             />
                         </div>
-                        <p className="md:text-[17px] text-[15px] font-[300] leading-relaxed opacity-90">
+                        <p className="md:text-[17px] text-[15px] font-[300] leading-relaxed opacity-90 lg:max-w-[300px]">
                             We're also active on social media! Follow us for engaging industry updates.
                         </p>
                         
                         {/* Locations Section */}
                         <div className="mt-4 md:block hidden">
                             <p className="font-semibold text-[#fded8b] md:text-[23px] text-[19px] mb-4 ">Locations</p>
-                            <div className="flex flex-col gap-4 md:text-[17px] text-[15px] opacity-90 md:whitespace-nowrap font-[300] max-w-[350px]">
+                            <div className="flex flex-col gap-4 md:text-[17px] text-[15px] opacity-90 lg:wrap font-[300] max-w-[450px]">
                                 <p>Building # 157, DHA Phase 4 Sector CCA Dha Phase 4, Lahore, 52000</p>
                                 <p>Plaza C-43-3, Commercial Area, Lake City</p>
                                 <p>39 D - Block PIA Housing Society Lahore</p>
@@ -48,7 +48,7 @@ export default function Footer() {
                     </div>
 
                     {/* Quick Links & Contact Info */}
-                    <div className="flex flex-wrap gap-10 md:gap-20">
+                    <div className="flex flex-wrap gap-10 md:gap-20 lg:gap-14">
                         {/* Quick Links */}
                         <div className="flex flex-col gap-6">
                             <p className="font-semibold text-[#fded8b] md:text-[20px] text-[17px]">Quick Links</p>
@@ -66,7 +66,7 @@ export default function Footer() {
                             <div className="flex flex-col gap-4 text-[16px]">
                                 <div>
                                     <p className="font-[500] md:text-[17px] text-[15px]">Opening Hours:</p>
-                                    <p className="opacity-90 font-[300] md:text-[17px] text-[15px] max-w-[200px]">Mon – Sun: 12:30 PM – 2:00 AM</p>
+                                    <p className="opacity-90 font-[300] md:text-[17px] text-[15px] ">Monday – Sunday: 12:30 PM – 2:00 AM</p>
                                 </div>
                                 <p className="opacity-90 font-[300] md:text-[17px] text-[15px]">0314 4445074</p>
                                 <p className="opacity-90 font-[300] md:text-[17px] text-[15px]">info@shawarmastop.co</p>

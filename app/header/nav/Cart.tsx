@@ -108,7 +108,7 @@ export default function Cart({ isOpen, onClose }: CartProps) {
           <Link
             href="/checkout"
             onClick={onClose}
-            className="block w-full bg-[#FF4D30] text-white py-4 rounded-full font-bold md:text-lg text-[16px] hover:bg-[#e6452b] transition-colors shadow-lg active:scale-95 text-center"
+            className="block w-full bg-[#FF4D30] text-white md:py-4 py-2 rounded-full font-bold md:text-lg text-[16px] hover:bg-[#e6452b] transition-colors shadow-lg active:scale-95 text-center"
           >
             Checkout
           </Link>

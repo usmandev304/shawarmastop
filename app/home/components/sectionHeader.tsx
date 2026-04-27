@@ -22,7 +22,7 @@ export default function SectionHeader({
 }: SectionHeaderProps) {
     return (
         /* Replaced md:pt-[73px] with a container style matching the grid's bottom margin consistency */
-        <div className="flex flex-col items-center text-center justify-center md:pt-[73px] md:mb-12 mb-7 mt-[50px] md:mt-0">
+        <div className="flex flex-col items-center text-center justify-center md:pt-[73px] md:mb-12 lg:mb-3 mb-7 mt-[50px] md:mt-12">
             
             {/* Badge Image - Consistent with grid leading/shrink-0 behavior */}
             <div className="flex justify-center w-full mb-2 shrink-0 pt-[25px] md:pt-0">

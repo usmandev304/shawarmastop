@@ -76,7 +76,7 @@ export default function Testimonial() {
         </div>
 
         {/* Testimonial Text */}
-        <p className="md:text-[18px] text-[14px]  max-w-lg">
+        <p className="md:text-[18px] text-[14px]  max-w-lg lg:max-w-[580px]">
           {activeTestimonial.text}
         </p>
 

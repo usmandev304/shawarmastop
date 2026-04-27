@@ -91,10 +91,12 @@ const VerticalLoopColumn = ({
     return (
         <div
             className="relative overflow-hidden"
-            style={{ height: loopDistance ? `${loopDistance}px` : undefined }}
+            // Yahan humne height ko 911px par fix kar diya hai
+            style={{ height: '911px' }} 
         >
             <motion.div
                 className="will-change-transform"
+                // Animation abhi bhi loopDistance tak hi jayegi taake loop smooth rahe
                 animate={loopDistance ? { y: [0, -loopDistance] } : undefined}
                 transition={{
                     y: {
@@ -105,6 +107,7 @@ const VerticalLoopColumn = ({
                     },
                 }}
             >
+                {/* First Set */}
                 <div ref={firstSetRef} className="space-y-4 pb-4">
                     {items.map((item) => (
                         <GalleryCard
@@ -115,6 +118,7 @@ const VerticalLoopColumn = ({
                     ))}
                 </div>
 
+                {/* Second Set (Duplicate for Infinite effect) */}
                 <div className="space-y-4 pb-4">
                     {items.map((item) => (
                         <GalleryCard
@@ -128,7 +132,6 @@ const VerticalLoopColumn = ({
         </div>
     );
 };
-
 export default function FoodGallery() {
     return (
         <>

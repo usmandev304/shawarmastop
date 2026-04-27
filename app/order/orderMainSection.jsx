@@ -145,7 +145,7 @@ export default function OrderMainSection() {
                                         <button
                                             type="button"
                                             onClick={() => handleAddToCart(item)}
-                                            className="mt-auto w-full rounded-full bg-[#f95233] py-2.5 text-center text-[12px] font-semibold text-white transition-colors hover:bg-[#e04020] sm:text-[13px]"
+                                            className="mt-auto w-full rounded-full bg-[#f95233] py-2 text-center text-[12px] font-semibold text-white transition-colors hover:bg-[#e04020] sm:text-[13px]"
                                         >
                                             Order Now
                                         </button>
