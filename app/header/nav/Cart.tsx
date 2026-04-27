@@ -48,7 +48,7 @@ export default function Cart({ isOpen, onClose }: CartProps) {
         <div className="flex-1 overflow-y-auto space-y-6">
           {cartItems.map((item) => (
             <div key={item.id} className="flex gap-4 border-b border-gray-300 pb-4">
-              <div className="w-24 h-24 relative rounded-lg bg-gray-100 overflow-hidden">
+              <div className="md:w-24 md:h-24 w-20 h-20 relative rounded-lg bg-gray-100 overflow-hidden">
                 <Image
                   src={item.image}
                   alt={item.name}
@@ -68,29 +68,29 @@ export default function Cart({ isOpen, onClose }: CartProps) {
                   <div className="flex items-center border rounded-md border-gray-300 overflow-hidden">
                     <button
                       onClick={() => decrementItem(item.id)}
-                      className="px-3 py-1 hover:bg-gray-100 text-black transition-colors"
+                      className="md:px-3 px-1 py-1.5 hover:bg-gray-100 text-black transition-colors"
                     >
                       <Minus size={14} />
                     </button>
 
-                    <span className="px-4 py-1 font-semibold text-black ">
+                    <span className="md:px-3 px-1.5 py-1 font-semibold text-black  md:text-[14px] text-12">
                       {item.quantity}
                     </span>
 
                     <button
                       onClick={() => incrementItem(item.id)}
-                      className="px-3 py-1 hover:bg-gray-100 text-black transition-colors"
+                      className="md:px-3 px-1.5 py-1 hover:bg-gray-100 text-black transition-colors  md:text-[14px] text-12"
                     >
                       <Plus size={14} />
                     </button>
                   </div>
                   <button
                     onClick={() => removeItem(item.id)}
-                    className="text-red-500 hover:bg-red-50 p-1 rounded transition-colors"
+                    className="text-red-500 hover:bg-red-50 p-1 rounded transition-colors  md:text-[14px] text-12"
                   >
                     <Trash2 size={18} />
                   </button>
-                  <span className="font-bold text-black">
+                  <span className="font-bold text-black lg:text-lg text-[12px]">
                     RS {item.price * item.quantity}
                   </span>
                 </div>

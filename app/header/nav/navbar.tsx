@@ -8,7 +8,11 @@ import { Menu, ChevronDown, X } from 'lucide-react';
 import { useState } from 'react';
 import { useCart } from '@/app/context/CartContext';
 import { Poppins } from 'next/font/google';
-const poppins = Poppins({ subsets: ['latin'], weight: ['600'] });
+// Is line ko update karein
+const poppins = Poppins({ 
+  subsets: ['latin'], 
+  weight: ['200', '400', '500', '600', '700'] // Jo weights aap use kar rahe hain wo sab yahan add karein
+});
 
 import logo from '../../../images/logo/logo.png';
 import search from '../../../images/navbar-icons/search.png';
@@ -36,7 +40,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const getNavLinkClass = (href: string) =>
-    `text-[15px] md:text-[17x] lg:text-[20px] font-semibold ${poppins.className} transition-colors ${pathname === href ? 'text-[#E2F163]' : 'hover:text-white/80'
+    `text-[15px] md:text-[17x] lg:text-[20px] font-[400] ${poppins.className} transition-colors ${pathname === href ? 'text-[#E2F163]' : 'hover:text-white/80'
     }`;
 
   const getProfileNavLinkClass = (href: string) => {
@@ -46,9 +50,9 @@ export default function Navbar() {
       (href === '/' && pathname === '/header/nav') ||
       (href === '/header/nav/profilePage' && pathname === '/header/nav/profilePage');
     if (isActive) {
-      return `${base} text-[#E2F163] font-bold`;
+      return `${base} text-[#E2F163] font-[500]`;
     }
-    return `${base} text-white font-semibold hover:text-white/80`;
+    return `${base} text-white font-[500] hover:text-white/80`;
   };
 
   const contactLinkClass = `hidden md:block text-[15px] md:text-[17px] lg:text-[20px] font-bold transition-colors ${pathname === '/contact' ? 'text-[#E2F163]' : 'hover:text-white/80'
@@ -63,8 +67,8 @@ export default function Navbar() {
       <nav
         className={
           isProfile
-            ? 'relative bg-[#F95233] text-white px-6 py-4 md:py-[34px]'
-            : 'relative bg-[#F95233] text-white px-6 py-4 md:py-[34px]'
+            ? 'relative bg-[#F95233] text-white px-6 py-4 md:py-[25px]'
+            : 'relative bg-[#F95233] text-white px-6 py-4 md:py-[25px]'
         }
       >
         <div className="max-w-[1317px] mx-auto flex items-center justify-between ">
@@ -113,7 +117,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          <div className="flex items-center md:gap-6 sm:gap-4 gap-3 ml-auto">
+          <div className="flex items-center md:gap-6 sm:gap-4 gap-3 ml-auto cursor-pointer">
             {!isProfile && (
               <>
                 <Link
@@ -169,7 +173,7 @@ export default function Navbar() {
                 <Image
                   src={shoppingBag}
                   alt="Shopping Bag"
-                  className="w-[23px] h-[24px] lg:w-[23px] lg:h-[29px]"
+                  className="w-[23px] h-[24px] lg:w-[23px] lg:h-[29px] cursor-pointer"
                 />
                 {itemCount > 0 && (
                   <span className="absolute -top-2 -right-2 bg-white text-[#F95233] text-[11px] font-bold rounded-full min-w-[18px] h-[18px] flex items-center justify-center px-1">
@@ -193,7 +197,7 @@ export default function Navbar() {
         }`}
       >
         <div className="mb-8 flex items-center justify-between">
-          <span className="text-lg font-semibold">Menu</span>
+          <span className="text-lg font-[600]">Menu</span>
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen(false)}
@@ -208,7 +212,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-[18px] font-semibold ${isProfile ? getProfileNavLinkClass(link.href) : getNavLinkClass(link.href)}`}
+              className={`text-[18px] font-[600] ${isProfile ? getProfileNavLinkClass(link.href) : getNavLinkClass(link.href)}`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.name}
@@ -217,7 +221,7 @@ export default function Navbar() {
           {!isProfile && (
             <Link
               href="/contact"
-              className="text-[18px] font-semibold"
+              className="text-[18px] font-[600]"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Contact

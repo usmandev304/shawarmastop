@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import piabrach from '../../images/lakecity/piabrach.png';
+import gullbery from '../../images/lakecity/gullbery.png';
 import { Poppins } from 'next/font/google';
 import Main from "../lake-city/components/main";
 import Shawarmastop from '../../images/lakecity/Shawarmastop.png'
@@ -29,13 +29,13 @@ export default function GullberyaBranchPage() {
 
   return (
     <>
-      <Image src={piabrach} alt="Pia Branch" className="h-full w-full object-contain" priority />
+      <Image src={gullbery} alt="Pia Branch" className="h-full w-full object-contain" priority />
       <div className={`${poppins.className} mx-auto flex max-w-[840px] flex-col items-center px-4`}>
         <Main
           logo={Shawarmastop}
-          title="PIA Housing Gets a Taste Upgrade"
-          description="Shawarma Stop proudly opens its branch in PIA Housing Society, bringing its popular menu closer to the community. With fresh ingredients, bold flavors, and a friendly environment, this outlet is ideal for everyday cravings and family meals."
-          secondParagraph="Experience quick service and consistent quality, making every visit a delicious and memorable one."
+          title="Gulberg Gets a New Flavor Hub"
+          description="Shawarma Stop continues its successful journey with the opening of its 4th branch in Gulberg, Lahore. As a growing name in the city’s food scene, Shawarma Stop now proudly serves customers across four locations, bringing its signature flavors and quality to even more people. The Gulberg branch offers the same delicious, freshly prepared shawarmas that have made Shawarma Stop a local favorite, all in a vibrant and convenient setting for food lovers."
+          // secondParagraph= null
           ctaLabel="Order Now"
           ctaHref="/order"
           openingHoursTitle="Opening Hours"
@@ -48,7 +48,7 @@ export default function GullberyaBranchPage() {
         badgeImage={props}
         title="Our Food Gallery"
         description={
-          < div className={`${poppins.className} font-[400] text-[16px] leading-[19.8px] font-[200] text-black max-w-[780px] px-4`}>
+          <div className={`${poppins.className} font-[400] text-[16px] leading-[19.8px] font-[200] text-black max-w-[780px] px-4`}>
             <p className="font-[200]">Explore our Gallery and discover our freshly made favorites. For more delicious updates, follow us on Instagram{" "}
               <span className="text-[#FF5733] font-[500]">
                 <a href="https://www.instagram.com/shawarmastop/"
@@ -75,7 +75,7 @@ export default function GullberyaBranchPage() {
           buttonHref="https://www.instagram.com/shawarmastop/"
         />
       </div>
-       <section className={`${poppins.className} mx-auto md:mt-10 mb-30 w-full max-w-[1387px] m-auto overflow-hidden rounded-[12px]`}>
+       <section className={`${poppins.className} mx-auto lg:mt-40 md:mt-10 mb-30 w-full max-w-[1387px] m-auto overflow-hidden rounded-[12px]`}>
         <div className="md:mt-40 mb-10">
         <SectionHeader
          badgeImage={props}

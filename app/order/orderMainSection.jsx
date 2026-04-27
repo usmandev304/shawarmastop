@@ -77,7 +77,7 @@ export default function OrderMainSection() {
                                 type="button"
                                 data-category={category}
                                 onClick={handleCategoryClick}
-                                className={`content-stretch flex md:h-[48px] h-[38px] items-center justify-center md:text-[14px] font-[400] px-[16px] py-[10px] rounded-[100px] shrink-0 w-[90px] md:w-[130px] transition-colors ${selectedCategory === category
+                                className={`content-stretch flex md:h-[48px] h-[38px] cursor-pointer items-center justify-center md:text-[14px] font-[400] px-[16px] py-[10px] rounded-[100px] shrink-0 w-[90px] md:w-[130px] transition-colors ${selectedCategory === category
                                     ? 'bg-[#f95233]'
                                     : 'bg-transparent hover:bg-[#f4e8e2]'
                                     }`}
@@ -168,7 +168,7 @@ export default function OrderMainSection() {
                                                 className={`${poppins.className} w-[130px] shrink-0 rounded-[30px] bg-[#f95233] px-[16px] py-[9px] transition-colors hover:bg-[#e04020]`}
                                             >
                                                 <p
-                                                    className={`${poppins.className} whitespace-nowrap text-center text-[14px] not-italic leading-[normal] text-white`}
+                                                    className={`${poppins.className} whitespace-nowrap cursor-pointer text-center text-[14px] not-italic leading-[normal] text-white`}
                                                 >
                                                     Add To Cart
                                                 </p>

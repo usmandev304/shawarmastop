@@ -3,7 +3,10 @@
 import React, { useCallback, useEffect, useId, useRef, useState } from 'react';
 import { X, MapPin } from 'lucide-react';
 import { saveUserLocationToBackend } from '@/lib/api';
-
+import locationicon from '../../images/locationicon.png'
+import Image from 'next/image';
+import { Poppins } from 'next/font/google';
+const poppins = Poppins({ subsets: ['latin'], weight: ['600'] }); 
 /** Fresh GPS request + high accuracy — browser permission bar (Chrome “Google” location) is tied to this call. */
 const GEO_OPTIONS: PositionOptions = {
   enableHighAccuracy: true,
@@ -197,32 +200,32 @@ export default function Location() {
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 p-4"
+      className={`fixed inset-0 z-[100] flex items-center justify-center bg-black/50 p-4 ${poppins.className}`}
       aria-modal="true"
       role="presentation"
     >
       <div
-        className="relative w-full max-w-md overflow-hidden rounded-3xl bg-white p-6 shadow-xl animate-fadeIn"
+        className="relative w-full max-w-[850px] overflow-hidden rounded-3xl bg-white lg:p-15 shadow-xl animate-fadeIn"
         role="dialog"
         aria-labelledby="location-modal-title"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="mb-6 flex items-start justify-between">
           <div>
-            <h2 id="location-modal-title" className="text-xl font-bold text-gray-900">
+            <h2 id="location-modal-title" className="text-[32px] font-[600] text-gray-900">
               Choose Delivery Location
             </h2>
-            <p className="mt-1 text-sm leading-tight text-gray-400">
+            <p className="mt-1 text-[16px] leading-tight text-[#A6A6A6] font-[400] lg:mb-12">
               Select your current location or enter address manually.
             </p>
           </div>
           <button
             type="button"
             onClick={handleClose}
-            className="text-gray-400 transition-colors hover:text-gray-600"
+            className="text-gray-400 transition-colors hover:text-gray-600 cursor-pointer"
             aria-label="Close"
           >
-            <X size={24} strokeWidth={1.5} />
+            <X strokeWidth={1.5} className='lg:w-[50px] lg:h-[50px]'/>
           </button>
         </div>
 
@@ -230,12 +233,10 @@ export default function Location() {
           type="button"
           disabled={locating}
           onClick={handleUseCurrentLocation}
-          className="mb-2 flex w-full items-center justify-start gap-3 rounded-xl border border-gray-200 px-2 py-4 transition-colors hover:bg-gray-50 disabled:cursor-wait disabled:opacity-70 lg:px-4"
+          className="mb-9 flex w-full items-center cursor-pointer justify-start gap-3 rounded-xl border border-gray-200 px-5 py-7 transition-colors hover:bg-gray-50 disabled:cursor-wait disabled:opacity-70 lg:px-7"
         >
-          <div className="rounded-full bg-orange-50 p-2">
-            <MapPin className="text-orange-600" size={20} />
-          </div>
-          <span className="font-bold text-gray-900">
+          <Image src={locationicon} alt="location" className='lg:w-[30px] lg:h-[30px]' />
+          <span className="text-gray-900 lg:text-[20px] font-[600] cursor-pointer">
             {locating ? 'Waiting for location permission…' : 'Use Current Location'}
           </span>
         </button>
@@ -254,13 +255,13 @@ export default function Location() {
         </div>
 
         <div className="relative mb-6 flex items-center">
-          <div className="flex-grow border-t border-gray-200" />
-          <span className="mx-4 flex-shrink text-xs font-medium uppercase tracking-widest text-gray-300">OR</span>
-          <div className="flex-grow border-t border-gray-200" />
+          <div className="flex-grow border-t border-gray-200 lg:w-[10px]" />
+          <span className="mx-4 flex-shrink text-[17px] font-[500] uppercase tracking-widest text-gray-300">OR</span>
+          <div className="flex-grow border-t border-gray-200 lg:w-[3px]" />
         </div>
 
         <div className="mb-8">
-          <label htmlFor="manual-address" className="mb-3 block font-bold text-gray-900">
+          <label htmlFor="manual-address" className="mb-3 block lg:text-[20px] font-[600] text-gray-900">
             Enter Address Manually
           </label>
           <div className="relative">
@@ -289,8 +290,8 @@ export default function Location() {
                   setHighlightIndex(-1);
                 }, 180);
               }}
-              placeholder="Start typing area, city, or street…"
-              className="w-full rounded-2xl border-none bg-gray-50 p-4 text-base text-gray-700 outline-none transition-all placeholder:text-gray-400 focus:ring-2 focus:ring-orange-500"
+              placeholder="Enter House, Street, Area...."
+              className="w-full rounded-2xl border-none bg-[#F3F3F5] p-6 text-base text-gray-700 outline-none transition-all placeholder:text-gray-400 focus:ring-2 focus:ring-orange-500 font-[400]"
             />
 
             {suggestLoading ? (
@@ -339,7 +340,7 @@ export default function Location() {
         <button
           type="button"
           onClick={handleConfirm}
-          className="w-full rounded-full bg-[#FF5A3D] py-4 font-bold text-white shadow-lg shadow-orange-200 transition-all hover:bg-[#e84f35] active:scale-[0.98]"
+          className="w-full rounded-full bg-[#FF5A3D] py-5 font-[500] text-[16px] cursor-pointer text-white transition-all hover:bg-[#e84f35] active:scale-[0.98]"
         >
           Confirm Location
         </button>

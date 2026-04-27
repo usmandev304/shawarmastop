@@ -96,7 +96,7 @@ export default function Products({ items }: ProductGridProps) {
                                     badge: product.badge,
                                 });
                             }}
-                            className="rounded-full bg-[#FF5733] px-[23px] py-[7px] text-[14px] font-bold text-white transition-colors hover:bg-[#E64B29]"
+                            className="rounded-full bg-[#FF5733] px-[23px] py-[7px] cursor-pointer text-[14px] font-bold text-white transition-colors hover:bg-[#E64B29]"
                         >
                             Add To Cart
                         </button>
@@ -124,7 +124,7 @@ export default function Products({ items }: ProductGridProps) {
                                 badge: product.badge,
                             });
                         }}
-                        className="mt-2 w-full rounded-full bg-[#FF5733] py-2 text-center text-[11px] font-bold text-white transition-colors hover:bg-[#E64B29] md:hidden"
+                        className="mt-2 w-full rounded-full bg-[#FF5733] py-2 text-center text-[11px] font-bold text-white transition-colors hover:bg-[#E64B29] md:hidden cursor-pointer"
                     >
                         Add To Cart
                     </button>

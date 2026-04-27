@@ -29,6 +29,7 @@ interface CartContextValue {
   incrementItem: (id: string | number) => void;
   decrementItem: (id: string | number) => void;
   removeItem: (id: string | number) => void;
+  clearCart: () => void;
 }
 
 const CartContext = createContext<CartContextValue | null>(null);
@@ -80,6 +81,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setCartItems((prev) => prev.filter((item) => item.id !== id));
   };
 
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
   const itemCount = useMemo(
     () => cartItems.reduce((sum, item) => sum + item.quantity, 0),
     [cartItems],
@@ -99,6 +104,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       incrementItem,
       decrementItem,
       removeItem,
+      clearCart,
     }),
     [cartItems, itemCount, subtotal],
   );

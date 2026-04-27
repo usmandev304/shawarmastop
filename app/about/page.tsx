@@ -41,12 +41,12 @@ export default function About() {
                             alt="about"
                             // width={538}
                             height={654}
-                            className="h-auto w-full object-contain lg:w-[32vw]"
+                            className="h-auto w-full object-contain lg:w-[34vw]"
                         />
                     </div>
                 </div>
             </div>
-            <div className={`${poppins.className} mx-auto grid w-full max-w-[1487px] grid-cols-2 gap-6 px-4 text-center md:mt-16 lg:mb-[118px] md:mb-[80px] sm:mb-[50px] mb-[40px] md:grid-cols-4 md:gap-4 md:leading-[50px]`}>
+            <div className={`${poppins.className} mx-auto grid w-full max-w-[1487px] grid-cols-2 gap-6 px-4 text-center lg:mt-20 md:mt-16 lg:mb-[118px] md:mb-[80px] sm:mb-[50px] mb-[40px] md:grid-cols-4 md:gap-4 md:leading-[50px] lg:leading-[80px]`}>
 
                 <div>
                     <h1 className='lg:text-[84px] md:text-[70px] sm:text-[50px] text-[40px] text-[#F95233] font-bold'>10+</h1>

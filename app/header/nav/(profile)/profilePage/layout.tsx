@@ -1,3 +1,5 @@
+import ProfileFooter from "./footer";
+
 export default function ProfileGroupLayout({
     children,
   }: {
@@ -6,6 +8,7 @@ export default function ProfileGroupLayout({
     return (
       <section className="profile-layout-wrapper min-h-screen bg-white">
         {children}
+        <ProfileFooter />
       </section>
     );
   }

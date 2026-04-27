@@ -161,7 +161,7 @@ export default function FoodGallery() {
                                 key={`gallery-column-md-${index}`}
                                 items={columnItems}
                                 imageClassName="w-full h-auto object-cover"
-                                duration={14 + index * 2}
+                                duration={14}
                             />
                         ))}
                     </div>
@@ -172,7 +172,7 @@ export default function FoodGallery() {
                                 key={`gallery-column-lg-${index}`}
                                 items={columnItems}
                                 imageClassName="w-full h-auto object-cover"
-                                duration={14 + index * 2}
+                                duration={14}
                             />
                         ))}
                     </div>

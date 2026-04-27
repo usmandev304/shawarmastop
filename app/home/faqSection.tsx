@@ -79,7 +79,7 @@ function FaqItem({ question, answer }: { question: string; answer: ReactNode }) 
         <div className="bg-[#f5f3ef] rounded-2xl p-6 md:p-8 transition-all duration-300">
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="w-full flex justify-between items-center text-left gap-4"
+                className="w-full flex justify-between items-center text-left cursor-pointer gap-4"
             >
                 <h3 className="md:text-[20px] sm:text-[17px] text-[14px] font-[600] text-[#1a1a1a]">
                     {question}

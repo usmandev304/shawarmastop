@@ -11,48 +11,51 @@ const AUTO_SLIDE_MS = 6000;
 const total = branchLocations.length;
 
 const navButtonClass =
-  "absolute top-1/2 z-20 -translate-y-1/2 flex md:h-11 md:w-11 h-6 w-6 items-center justify-center rounded-full border-2 border-[#E55A38] text-[#E55A38] bg-white/90 shadow-sm transition hover:bg-white hover:scale-105 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80";
+  "absolute top-1/2 z-20 -translate-y-1/2 flex md:h-11 md:w-11 h-6 w-6 items-center justify-center rounded-full text-white bg-[rgba(7,6,6,0.6)] shadow-sm transition hover:bg-black hover:scale-105 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80";
+const branchRouteById: Record<string, string> = {
+  "lake-city": "/lake-city",
+  pia: "/pia-branch",
+  dha: "/dha-branch",
+  gulberg: "/gullbery-branch",
+  gullbery: "/gullbery-branch",
+  "gul-brach": "/gullbery-branch",
+};
 
 export default function HomeLocation() {
   const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState<1 | -1>(1);
   const [isPaused, setIsPaused] = useState(false);
   const reduceMotion = useReducedMotion();
   const current = branchLocations[index];
 
   const goPrev = useCallback(() => {
+    setDirection(-1);
     setIndex((i) => (i - 1 + total) % total);
   }, []);
 
   const goNext = useCallback(() => {
+    setDirection(1);
     setIndex((i) => (i + 1) % total);
   }, []);
 
   useEffect(() => {
     if (isPaused) return;
     const id = setInterval(() => {
+      setDirection(1);
       setIndex((i) => (i + 1) % total);
     }, AUTO_SLIDE_MS);
     return () => clearInterval(id);
   }, [index, isPaused]);
 
-  const textTransition = reduceMotion
-    ? { duration: 0 }
-    : { duration: 0.45, ease: [0.4, 0, 0.2, 1] as const };
-
   const bgTransition = reduceMotion
     ? { duration: 0.2 }
-    : { duration: 0.7, ease: [0.4, 0, 0.2, 1] as const };
+    : { duration: 0.95, ease: [0.22, 1, 0.36, 1] as const };
 
   const viewStoreHref =
-    current.id === "lake-city"
-      ? "/lake-city"
-      : current.id === "pia"
-        ? "/pia-branch"
-      : current.id === "dha"
-        ? "/dha-branch"
-      : current.id === "gullbery"
-        ? "/gullbery-branch"
-      : (`/order?from=location&branch=${index}` as const);
+    branchRouteById[current.id] ??
+    (index === 3 || current.title.toLowerCase().includes("gulberg")
+      ? "/gullbery-branch"
+      : (`/order?from=location&branch=${index}` as const));
 
   return (
     <>
@@ -69,7 +72,7 @@ export default function HomeLocation() {
           }}
         >
           <div className="absolute inset-0 z-0" aria-hidden>
-            <AnimatePresence mode="wait" initial={false}>
+            <AnimatePresence mode="sync" initial={false}>
               <motion.div
                 key={index}
                 className="absolute inset-0 bg-cover bg-no-repeat"
@@ -77,9 +80,17 @@ export default function HomeLocation() {
                   backgroundImage: `url('${current.image.src}')`,
                   backgroundPosition: current.focal,
                 }}
-                initial={reduceMotion ? { opacity: 0.75 } : { opacity: 0, scale: 1.1 }}
-                animate={reduceMotion ? { opacity: 1 } : { opacity: 1, scale: 1 }}
-                exit={reduceMotion ? { opacity: 0.75 } : { opacity: 0, scale: 0.98 }}
+                initial={
+                  reduceMotion
+                    ? { opacity: 1 }
+                    : { opacity: 1, x: direction > 0 ? "16%" : "-16%", scale: 1.06 }
+                }
+                animate={reduceMotion ? { opacity: 1 } : { opacity: 1, x: "0%", scale: 1.01 }}
+                exit={
+                  reduceMotion
+                    ? { opacity: 1 }
+                    : { opacity: 1, x: direction > 0 ? "-16%" : "16%", scale: 0.98 }
+                }
                 transition={bgTransition}
               />
             </AnimatePresence>
@@ -90,7 +101,7 @@ export default function HomeLocation() {
           <button
             type="button"
             onClick={goPrev}
-            className={`${navButtonClass} left-3 md:left-5`}
+            className={`${navButtonClass} left-3 md:left-5 cursor-pointer`}
             aria-label="Previous location"
           >
             <ChevronLeft className="h-6 w-6" strokeWidth={2.2} />
@@ -98,33 +109,22 @@ export default function HomeLocation() {
           <button
             type="button"
             onClick={goNext}
-            className={`${navButtonClass} right-3 md:right-5`}
+            className={`${navButtonClass} right-3 md:right-5 cursor-pointer`}
             aria-label="Next location"
           >
             <ChevronRight className="h-6 w-6" strokeWidth={2.2} />
           </button>
 
           <div className="relative z-10 w-full max-w-[640px] px-4 flex flex-col items-center md:mb-0">
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.div
-                key={index}
-                className="w-full flex flex-col items-center"
-                initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
-                animate={reduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
-                exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -16 }}
-                transition={textTransition}
-              >
-                <h2 className="md:text-[40px] text-[15px] sm:text-3xl font-bold text-white mb-3 tracking-tight">
-                  {current.title}
-                </h2>
+            <div className="w-full flex flex-col items-center">
+              <h2 className="md:text-[40px] text-[15px] sm:text-3xl font-bold text-white mb-3 tracking-tight">
+                {current.title}
+              </h2>
 
-                <p className="text-white font-light md:text-[16px] text-[9px] mb-4 font-sans max-w-[580px] min-h-16 md:min-h-14">
-                  {current.description}
-                </p>
-
-               
-              </motion.div>
-            </AnimatePresence>
+              <p className="text-white font-light md:text-[16px] text-[9px] mb-4 font-sans max-w-[580px] min-h-16 md:min-h-14">
+                {current.description}
+              </p>
+            </div>
 
             <Link
               href={viewStoreHref}
