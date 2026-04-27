@@ -103,7 +103,7 @@ export default function CheckoutPage() {
         <div className="max-w-[1200px] mx-auto paymentChecked  flex flex-col-reverse md:flex-col  md:grid lg:grid-cols-2 gap-10 lg:gap-16">
           <div>
             <h1 className="text-black md:text-[40px] font-[400] mb-15 hidden md:block">Checkout</h1>
-            <h1 className="text-black md:text-[40px] font-[600] text-[24px] font-[400] mb-10 block md:hidden">Delivery details</h1>
+            <h1 className="text-black md:text-[40px] font-[600] md:text-[24px] text-[20px] font-[400] mb-10 block md:hidden">Delivery details</h1>
 
             <div className="space-y-6">
               <div>
@@ -163,9 +163,9 @@ export default function CheckoutPage() {
               <button
                 type="button"
                 onClick={handleChooseLocation}
-                className={`w-full py-4 rounded-2xl text-[16px] font-[500] transition-colors flex items-center justify-center gap-3 border ${locationSelected
-                    ? 'border-[#FF4D30] bg-[#FF4D30] text-white'
-                    : 'border-[#FF4D30] text-[#FF4D30] hover:bg-[#FFF1EE]'
+                className={`w-full md:py-4 py-2.5 rounded-2xl text-[16px] font-[500] transition-colors flex items-center justify-center gap-3 border ${locationSelected
+                  ? 'border-[#FF4D30] bg-[#FF4D30] text-white'
+                  : 'border-[#FF4D30] text-[#FF4D30] hover:bg-[#FFF1EE]'
                   }`}
               >
                 <Image
@@ -194,7 +194,7 @@ export default function CheckoutPage() {
               <button
                 onClick={handleCompleteOrder}
                 disabled={isProcessing}
-                className="w-full bg-[#FF4D30] text-white py-4 rounded-full text-[16px] font-[500] hover:bg-[#e6452b] cursor-pointer transition-colors"
+                className="w-full bg-[#FF4D30] text-white md:py-4 py-2.5 rounded-full text-[16px] font-[500] hover:bg-[#e6452b] cursor-pointer transition-colors"
               >
                 {isProcessing ? 'Processing...' : 'Complete Order'}
               </button>
@@ -238,7 +238,11 @@ export default function CheckoutPage() {
 
             <div className="mt-10 border-t border-[#EFEFEF] pt-5 space-y-4">
               <div className="flex justify-between text-[16px] font-[400] text-[#000000]">
-                <p className="text-[16px] font-[400]  text-[#000000]">Subtotal {itemCount > 0 ? `${itemCount} Items` : ''}</p>
+                <p className="text-[16px] font-[400] text-[#000000]">
+                  Subtotal {itemCount > 0 && (
+                    <small className="ml-1 text-gray-500">{itemCount} Items</small>
+                  )}
+                </p>
                 <p className="text-[15px] font-[400] text-[#000000]">Rs{subtotal.toFixed(2)}</p>
               </div>
               <div className="flex justify-between text-[16px] font-[400] text-[#000000]">
@@ -249,9 +253,10 @@ export default function CheckoutPage() {
                 <p className="text-[16px] font-[400] text-[#000000]">Estimated taxes</p>
                 <p>Rs {estimatedTaxes.toFixed(2)}</p>
               </div>
+              <div className="mt-5 border-t border-[#EFEFEF]  block md:hidden"></div>
               <div className="flex justify-between items-end pt-3">
-                <p className="text-[20px] font-[600] text-[#000000]">Total</p>
-                <p className="text-[20px] font-[600] text-[#000000]"><sub className="text-[12px] font-[400] text-[#000000]">PKR</sub> Rs {total.toFixed(1)}</p>
+                <p className="md:text-[20px] text-[19px] font-[600] text-[#000000]">Total</p>
+                <p className="md:text-[20px] text-[19px] font-[600] text-[#000000]"><sub className="text-[12px] font-[400] text-[#000000]">PKR</sub> Rs {total.toFixed(1)}</p>
               </div>
             </div>
           </div>

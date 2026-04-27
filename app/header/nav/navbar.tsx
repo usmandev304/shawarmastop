@@ -67,12 +67,12 @@ export default function Navbar() {
       <nav
         className={
           isProfile
-            ? 'relative bg-[#F95233] text-white px-6 py-4 md:py-[25px]'
-            : 'relative bg-[#F95233] text-white px-6 py-4 md:py-[25px]'
+            ? 'relative bg-[#F95233] text-white sm:px-6 px-3 py-4 md:py-[25px]'
+            : 'relative bg-[#F95233] text-white sm:px-6 px-3 py-4 md:py-[25px]'
         }
       >
         <div className="max-w-[1317px] mx-auto flex items-center justify-between ">
-          <div className="flex items-center w-full md:w-auto justify-between md:gap-[50px]">
+          <div className="flex items-center w-full md:w-auto justify-between lg:gap-[50px] md:gap-[20px]">
             <button
               className="md:hidden"
               type="button"
@@ -94,7 +94,7 @@ export default function Navbar() {
               </Link>
             </div>
 
-            <div className="hidden md:flex items-center gap-11 ml-10">
+            <div className="hidden md:flex items-center lg:gap-11 md:gap-6 ml-10">
               {isProfile
                 ? profilePageNavLinks.map((link) => (
                     <Link
@@ -117,7 +117,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          <div className="flex items-center md:gap-6 sm:gap-4 gap-3 ml-auto cursor-pointer">
+          <div className="flex items-center md:gap-4 sm:gap-4 gap-2 lg:gap-3 ml-auto cursor-pointer">
             {!isProfile && (
               <>
                 <Link
@@ -143,7 +143,7 @@ export default function Navbar() {
                 <Image
                   src={profile}
                   alt="User Account"
-                  className="w-[23px] h-[20px] lg:w-[40px] lg:h-[40px]"
+                  className="w-[23px] h-[20px] md:w-[40px] md:h-[40px]"
                 />
                 <ChevronDown className="h-6 w-6 shrink-0 text-white" aria-hidden />
               </Link>
@@ -157,7 +157,7 @@ export default function Navbar() {
                 <Image
                   src={user}
                   alt="User Account"
-                  className="w-[23px] h-[20px] lg:w-[26px] lg:h-[26px]"
+                  className="w-[23px] h-[20px] md:w-[26px] md:h-[26px]"
                 />
               </Link>
             )}

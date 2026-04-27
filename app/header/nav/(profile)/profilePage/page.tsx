@@ -47,10 +47,10 @@ export default function ProfilePage() {
         <div className="bg-[#FF5232] px-6 py-8 md:px-8 md:py-10">
           <div className="flex items-center gap-4 md:gap-6">
             <div
-              className="flex h-16 w-16 md:h-20 md:w-20 shrink-0 items-center justify-center rounded-full border-2 border-white/90 bg-white/10"
+              className="flex h-12 w-12 md:h-20 md:w-20 shrink-0 items-center justify-center rounded-full border-2 border-white/90 bg-white/10"
               aria-hidden
             >
-              <User className="h-8 w-8 md:h-10 md:w-10 text-white" strokeWidth={1.5} />
+              <User className="h-8 w-8 md:h-10 md:w-10  text-white" strokeWidth={1.5} />
             </div>
             <div className="min-w-0 flex-1">
               {isEditing ? (
@@ -75,10 +75,10 @@ export default function ProfilePage() {
         <div className="px-6 py-6 md:px-8 md:py-8 space-y-6">
           <div className="flex gap-4">
             <div
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gray-100"
+              className="flex h-7 w-7 md:h-10 md:w-10 shrink-0 items-center justify-center rounded-full bg-gray-100"
               aria-hidden
             >
-              <Mail className="h-5 w-5 text-gray-600" strokeWidth={1.8} />
+              <Mail className="md:h-5 md:w-5 w-4 h-4 text-gray-600" strokeWidth={1.8} />
             </div>
             <div className="min-w-0 flex-1">
               <p className="text-xs text-gray-500">Email</p>
@@ -87,21 +87,21 @@ export default function ProfilePage() {
                   type="email"
                   value={form.email}
                   onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
-                  className={inputClass}
+                  className={`${inputClass}`}
                   autoComplete="email"
                 />
               ) : (
-                <p className="text-sm font-bold text-[#1a1a1a] mt-0.5">{saved.email}</p>
+                <p className="md:text-sm text-[12px] font-bold text-[#1a1a1a] mt-0.5">{saved.email}</p>
               )}
             </div>
           </div>
 
           <div className="flex gap-4">
             <div
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gray-100"
+              className="flex h-7 w-7 md:h-10 md:w-10 shrink-0 items-center justify-center rounded-full bg-gray-100"
               aria-hidden
             >
-              <Phone className="h-5 w-5 text-gray-600" strokeWidth={1.8} />
+              <Phone className="md:h-5 md:w-5 w-4 h-4 text-gray-600" strokeWidth={1.8} />
             </div>
             <div className="min-w-0 flex-1">
               <p className="text-xs text-gray-500">Phone</p>
@@ -114,17 +114,17 @@ export default function ProfilePage() {
                   autoComplete="tel"
                 />
               ) : (
-                <p className="text-sm font-bold text-[#1a1a1a] mt-0.5">{saved.phone}</p>
+                <p className="md:text-sm text-[12px] font-bold text-[#1a1a1a] mt-0.5">{saved.phone}</p>
               )}
             </div>
           </div>
 
           <div className="flex gap-4">
             <div
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gray-100"
+              className="flex h-7 w-7 md:h-10 md:w-10 shrink-0 items-center justify-center rounded-full bg-gray-100"
               aria-hidden
             >
-              <MapPin className="h-5 w-5 text-gray-600" strokeWidth={1.8} />
+              <MapPin className="md:h-5 md:w-5 w-4 h-4 text-gray-600" strokeWidth={1.8} />
             </div>
             <div className="min-w-0 flex-1">
               <p className="text-xs text-gray-500">Delivery Address</p>
@@ -137,7 +137,7 @@ export default function ProfilePage() {
                   autoComplete="street-address"
                 />
               ) : (
-                <p className="text-sm font-bold text-[#1a1a1a] mt-0.5 leading-relaxed">
+                <p className="md:text-sm text-[12px] font-bold text-[#1a1a1a] mt-0.5 leading-relaxed">
                   {saved.address}
                 </p>
               )}

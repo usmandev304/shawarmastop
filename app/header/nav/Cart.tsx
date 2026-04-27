@@ -73,7 +73,7 @@ export default function Cart({ isOpen, onClose }: CartProps) {
                       <Minus size={14} />
                     </button>
 
-                    <span className="md:px-3 px-1.5 py-1 font-semibold text-black  md:text-[14px] text-12">
+                    <span className="md:px-3 px-1.5 py-1 font-semibold text-black  md:text-[14px] text-[12px]">
                       {item.quantity}
                     </span>
 

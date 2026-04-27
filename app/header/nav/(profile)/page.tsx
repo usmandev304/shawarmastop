@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ShoppingBag, Plus, Minus, Trash2 } from "lucide-react";
 import { useCart } from "@/app/context/CartContext";
+import OrderFooter from "./orderFooter";
 
 export default function OrdersPage() {
   const { cartItems, itemCount, subtotal, incrementItem, decrementItem, removeItem } =
@@ -33,11 +34,13 @@ export default function OrdersPage() {
             Browse Menu
           </Link>
         </div>
+        <OrderFooter />
       </main>
     );
   }
 
   return (
+    <>
     <main className="px-4 pt-15 max-w-[1387px] mx-auto">
       <h1 className="lg:text-[24px] font-bold text-[#000000] mb-6">Orders</h1>
 
@@ -129,5 +132,8 @@ export default function OrdersPage() {
         </div>
       </div>
     </main>
+        <OrderFooter />
+  
+    </>
   );
 }

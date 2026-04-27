@@ -205,17 +205,17 @@ export default function Location() {
       role="presentation"
     >
       <div
-        className="relative w-full max-w-[850px] overflow-hidden rounded-3xl bg-white lg:p-15 shadow-xl animate-fadeIn"
+        className="relative w-full max-w-[850px] overflow-hidden sm:rounded-3xl rounded-[10px] bg-white lg:p-15 md:p-10 sm:p-9 p-6 shadow-xl animate-fadeIn"
         role="dialog"
         aria-labelledby="location-modal-title"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="mb-6 flex items-start justify-between">
           <div>
-            <h2 id="location-modal-title" className="text-[32px] font-[600] text-gray-900">
+            <h2 id="location-modal-title" className="lg:text-[32px] md:text-[28px] sm:text-[24px] text-[15px] font-[600] text-gray-900">
               Choose Delivery Location
             </h2>
-            <p className="mt-1 text-[16px] leading-tight text-[#A6A6A6] font-[400] lg:mb-12">
+            <p className="mt-1 lg:text-[16px] md:text-[15px] sm:text-[14px] text-[12px] leading-tight text-[#A6A6A6] font-[400] lg:mb-12 md:mb-8">
               Select your current location or enter address manually.
             </p>
           </div>
@@ -225,7 +225,7 @@ export default function Location() {
             className="text-gray-400 transition-colors hover:text-gray-600 cursor-pointer"
             aria-label="Close"
           >
-            <X strokeWidth={1.5} className='lg:w-[50px] lg:h-[50px]'/>
+            <X strokeWidth={1.5} className='lg:w-[50px] lg:h-[50px] md:w-[40px] md:h-[40px] w-[30px] h-[30px] '/>
           </button>
         </div>
 
@@ -233,10 +233,10 @@ export default function Location() {
           type="button"
           disabled={locating}
           onClick={handleUseCurrentLocation}
-          className="mb-9 flex w-full items-center cursor-pointer justify-start gap-3 rounded-xl border border-gray-200 px-5 py-7 transition-colors hover:bg-gray-50 disabled:cursor-wait disabled:opacity-70 lg:px-7"
+          className="md:mb-9 sm:mb-5 flex w-full items-center cursor-pointer justify-start gap-3 rounded-xl border border-gray-200 px-5 py-4 transition-colors hover:bg-gray-50 disabled:cursor-wait disabled:opacity-70 lg:px-7 md:py-6 sm:py-5"
         >
-          <Image src={locationicon} alt="location" className='lg:w-[30px] lg:h-[30px]' />
-          <span className="text-gray-900 lg:text-[20px] font-[600] cursor-pointer">
+          <Image src={locationicon} alt="location" className='lg:w-[30px] lg:h-[30px] sm:w-[25px] sm:h-[25px] w-[20px] h-[20px]' />
+          <span className="text-gray-900 sm:text-[20px] text-[14px] font-[600] cursor-pointer">
             {locating ? 'Waiting for location permission…' : 'Use Current Location'}
           </span>
         </button>
@@ -256,12 +256,12 @@ export default function Location() {
 
         <div className="relative mb-6 flex items-center">
           <div className="flex-grow border-t border-gray-200 lg:w-[10px]" />
-          <span className="mx-4 flex-shrink text-[17px] font-[500] uppercase tracking-widest text-gray-300">OR</span>
+          <span className="mx-4 flex-shrink sm:text-[17px] text-[14px] font-[500] uppercase tracking-widest text-gray-300">OR</span>
           <div className="flex-grow border-t border-gray-200 lg:w-[3px]" />
         </div>
 
         <div className="mb-8">
-          <label htmlFor="manual-address" className="mb-3 block lg:text-[20px] font-[600] text-gray-900">
+          <label htmlFor="manual-address" className="mb-3 block sm:text-[20px] text-[14px] font-[600] text-gray-900">
             Enter Address Manually
           </label>
           <div className="relative">
@@ -291,7 +291,7 @@ export default function Location() {
                 }, 180);
               }}
               placeholder="Enter House, Street, Area...."
-              className="w-full rounded-2xl border-none bg-[#F3F3F5] p-6 text-base text-gray-700 outline-none transition-all placeholder:text-gray-400 focus:ring-2 focus:ring-orange-500 font-[400]"
+              className="w-full sm:rounded-2xl rounded-[10px] border-none bg-[#F3F3F5] p-6 text-base text-gray-700 py-4 outline-none transition-all placeholder:text-gray-400 focus:ring-2 focus:ring-orange-500 font-[400] sm:py-5 sm:text-[18px] text-[14px]"
             />
 
             {suggestLoading ? (
@@ -340,7 +340,7 @@ export default function Location() {
         <button
           type="button"
           onClick={handleConfirm}
-          className="w-full rounded-full bg-[#FF5A3D] py-5 font-[500] text-[16px] cursor-pointer text-white transition-all hover:bg-[#e84f35] active:scale-[0.98]"
+          className="w-full rounded-full bg-[#FF5A3D] sm:py-5 py-3 font-[500] sm:text-[16px] text-[14px] cursor-pointer text-white transition-all hover:bg-[#e84f35] active:scale-[0.98]"
         >
           Confirm Location
         </button>

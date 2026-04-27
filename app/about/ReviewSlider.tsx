@@ -95,20 +95,20 @@ export default function ReviewSlider() {
             </div>
 
             {/* Bottom Navigation: Reviewers */}
-            <div className="lg:mt-9 md:mt-10 mt-6 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8 md:gap-10 gap-7">
+            <div className="lg:mt-9 md:mt-10 mt-6 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8 md:gap-10 gap-3">
                 {reviews.map((user) => (
                     <button 
                         key={user.id}
                         onClick={() => setActiveReview(user)}
-                        className={`flex items-center gap-4 md:p-4 p-2 md:px-7 px-5  rounded-xl border transition-all  cursor-pointer duration-300 ${activeReview.id === user.id
+                        className={`flex items-center gap-4 md:p-4 p-2 md:px-7 px-5  md:rounded-xl rounded-[10px] border transition-all  cursor-pointer duration-300 ${activeReview.id === user.id
                             ? "bg-[#F95233] border-[#F95233] text-white"
-                            : "bg-white border-2 border-[#F95233] text-gray-800 hover:border-[#F95233]"
+                            : "bg-white md:border-2 border-[#F95233] text-gray-800 hover:border-[#F95233]"
                             }`} 
                     >
-                        <div className="relative md:w-13 md:h-14 w-10 h-10 rounded-full overflow-hidden  shadow-md">
+                        <div className="relative md:w-13 md:h-14 w-6 h-6 rounded-full overflow-hidden  shadow-md">
                             <Image src={user.avatar} alt={user.name} fill className="object-cover" />
                         </div>
-                        <span className="font-[500] lg:text-[22px] md:text-[18px] text-[13px]">{user.name}</span>
+                        <span className="font-[500] lg:text-[22px] md:text-[18px] text-[8px]">{user.name}</span>
                     </button>
                 ))}
             </div>

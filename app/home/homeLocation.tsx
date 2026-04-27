@@ -11,7 +11,7 @@ const AUTO_SLIDE_MS = 6000;
 const total = branchLocations.length;
 
 const navButtonClass =
-  "absolute top-1/2 z-20 -translate-y-1/2 flex md:h-11 md:w-11 h-6 w-6 items-center justify-center rounded-full text-white bg-[rgba(7,6,6,0.6)] shadow-sm transition hover:bg-black hover:scale-105 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80";
+  "absolute top-1/2 z-20 -translate-y-1/2 flex md:h-11 md:w-11 h-8 w-8 items-center justify-center rounded-full text-white bg-[rgba(7,6,6,0.6)] shadow-sm transition hover:bg-black hover:scale-105 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80";
 const branchRouteById: Record<string, string> = {
   "lake-city": "/lake-city",
   pia: "/pia-branch",
@@ -61,7 +61,7 @@ export default function HomeLocation() {
     <>
       <section className="px-4 pt-9 md:pb-[140px] pb-[100px] flex justify-center">
         <div
-          className="relative w-full max-w-[1300px] m-auto md:min-h-[400px] sm:min-h-[350px] h-[300px] md:rounded-[20px] overflow-hidden flex flex-col items-center justify-center text-center shadow-xl bg-neutral-900"
+          className="relative w-full max-w-[1300px] m-auto md:min-h-[400px] sm:min-h-[350px] h-[210px] md:rounded-[20px] rounded-[10px] overflow-hidden flex flex-col items-center justify-center text-center shadow-xl bg-neutral-900"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           onFocusCapture={() => setIsPaused(true)}
@@ -104,7 +104,7 @@ export default function HomeLocation() {
             className={`${navButtonClass} left-3 md:left-5 cursor-pointer`}
             aria-label="Previous location"
           >
-            <ChevronLeft className="h-6 w-6" strokeWidth={2.2} />
+            <ChevronLeft className="md:h-6 md:w-6 h-4 w-4" strokeWidth={2.2} />
           </button>
           <button
             type="button"
@@ -112,7 +112,7 @@ export default function HomeLocation() {
             className={`${navButtonClass} right-3 md:right-5 cursor-pointer`}
             aria-label="Next location"
           >
-            <ChevronRight className="h-6 w-6" strokeWidth={2.2} />
+            <ChevronRight className="md:h-6 md:w-6 h-4 w-4" strokeWidth={2.2} />
           </button>
 
           <div className="relative z-10 w-full max-w-[640px] px-4 flex flex-col items-center md:mb-0">
