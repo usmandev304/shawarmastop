@@ -43,11 +43,7 @@ export default function WhyChooseUs() {
         <section className="py-12 px-4 max-w-[1320px] mx-auto">
             <SectionHeader
                 badgeImage={props}
-                title={
-                    <span className="block">
-                        What Makes Shawarma Stop the Best for<br /> Customers & Employees
-                    </span>
-                }
+                title="What Makes Shawarma Stop the Best for Customers & Employees"
             />
 
             {/* Pill Buttons Container */}

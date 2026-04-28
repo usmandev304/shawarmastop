@@ -19,12 +19,10 @@ const poppins = Poppins({
 });
 
 const deliveryFeatures = [
-  { id: 1, img: FastDelivery, title: "Fast Delivery" },
-  { id: 2, img: CashbyHand, title: "Cash on Delivery" },
-  { id: 3, img: ProfessionalChef, title: "Professional Chef" },
-  { id: 4, img: QualityFood, title: "Quality Food" },
   { id: 5, img: QualityFood, title: "Quality Food" },
-  { id: 6, img: FastDelivery, title: "Fast Delivery" },
+  { id: 1, img: FastDelivery, title: "Fast Delivery" },
+  { id: 2, img: CashbyHand, title: "Cash by Hand" },
+  { id: 3, img: ProfessionalChef, title: "Professional Chef" },
 ];
 
 export default function Home() {
@@ -72,29 +70,33 @@ export default function Home() {
             />
 
             {/* Features Overlay */}
-            <div className="absolute inset-0 flex items-center">
+            <div className="absolute inset-0 flex items-center overflow-hidden">
               <motion.div
-                className="flex w-max gap-12 whitespace-nowrap"
+                className="flex whitespace-nowrap"
                 animate={{
-                  x: ["0%", "-50%"],
+                  x: ["0%", "-50%"], // This is the magic: move exactly half the width
                 }}
                 transition={{
-                  x: {
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    duration: 20,
-                    ease: "linear",
-                  },
+                  ease: "linear",
+                  duration: 25, // Adjust speed: higher number = slower
+                  repeat: Infinity,
                 }}
               >
+                {/* We render the list twice. 
+                   When the first 'Cash by Hand' exits left, 
+                   the second 'Cash by Hand' is entering right.
+                */}
                 {[...deliveryFeatures, ...deliveryFeatures].map((item, index) => (
-                  <div key={index} className="flex items-center gap-3 px-4">
+                  <div 
+                    key={index} 
+                    className="flex items-center gap-4 px-10 md:px-20" // Consistent spacing is key
+                  >
                     <Image
                       src={item.img}
                       alt={item.title}
                       className="sm:w-6 sm:h-6 w-4 h-4 md:w-9 md:h-9 object-contain"
                     />
-                    <p className="sm:text-sm text-[10px] md:text-[23px] md:font-[500] font-[500] text-gray-800  tracking-wide">
+                    <p className="sm:text-sm text-[10px] md:text-[23px] md:font-[500] font-[500] text-gray-800 tracking-wide">
                       {item.title}
                     </p>
                   </div>
