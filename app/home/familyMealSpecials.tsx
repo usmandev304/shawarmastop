@@ -48,6 +48,14 @@ const products = [
     }
 ];
 
+interface SectionHeaderProps {
+    badgeImage: any;
+    badgeAlt: string;
+    title: React.ReactNode;        // Updated for flexibility
+    description: React.ReactNode;  // Updated for flexibility
+    className?: string;            // Add this line (the ? makes it optional)
+}
+
 export default function FamilyMealSpecials() {
     return (
         <>
@@ -65,10 +73,12 @@ export default function FamilyMealSpecials() {
 
                 {/* Content */}
                 <div className="relative z-10 [&_img]:brightness-0 [&_img]:invert ">
-                    <SectionHeader className="md:mb-1 mb-0"
+                    <SectionHeader
+                        className="md:mb-1 mb-0 text-white" // Try passing the text color here
                         badgeImage={props}
-                        title={<span className='text-white font-[600]'>Family Meal Specials</span>}
-                        description={<span className="text-white font-[300] text-[14px] md:text-[17px] md:whitespace-nowrap">Delicious family-sized meals perfect for sharing, saving, and enjoying together.</span>}
+                        badgeAlt="Family Specials"
+                        title="Family Meal Specials"
+                        description="Delicious family-sized meals perfect for sharing, saving, and enjoying together."
                     />
                 </div>
                 <div className="relative z-10">
@@ -76,11 +86,11 @@ export default function FamilyMealSpecials() {
                         <Products items={products} />
                     </div>
                     <div className="[&_span]:!text-white [&_img]:brightness-0 [&_img]:invert [&_button]:!bg-[#FFFFFF] [&_button]:!text-[#F95233] pb-[30px] md:hidden">
-                    <CallToAction badges={[
-                        { image: FastDelivery, alt: 'Fast Delivery', label: 'Fast Delivery' },
-                        { image: QualityFood, alt: 'Quality Food', label: 'Quality Food' },
-                        { image: CashbyHand, alt: 'Cash By Hand', label: 'Cash By Hand' },
-                    ]} buttonText="View All Food" buttonHref="/order" />
+                        <CallToAction badges={[
+                            { image: FastDelivery, alt: 'Fast Delivery', label: 'Fast Delivery' },
+                            { image: QualityFood, alt: 'Quality Food', label: 'Quality Food' },
+                            { image: CashbyHand, alt: 'Cash By Hand', label: 'Cash By Hand' },
+                        ]} buttonText="View All Food" buttonHref="/order" />
                     </div>
                 </div>
             </section>
