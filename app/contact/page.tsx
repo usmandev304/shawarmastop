@@ -23,10 +23,10 @@ export default function Contact() {
             <h3 className="text-xl md:text-2xl sm:text-xl text-[17px] font-[500] md:font-bold mb-2">
               Lahore
             </h3>
-            <h1 className="sm:text-5xl text-4xl md:text-7xl font-extrabold mb-6 tracking-tight">
+            <h1 className="sm:text-5xl text-4xl md:text-7xl lg:text-[80px] font-extrabold mb-6 tracking-tight">
               Contact Us
             </h1>
-            <p className="text-lg md:text-xl font-medium leading-relaxed max-w-md">
+            <p className="text-lg md:text-xl font-[400] leading-relaxed max-w-[480px]">
               Tell us what you want and we'll take care of the rest.
               Fill out the form to order from our finest Shawarma Stop selections.
             </p>

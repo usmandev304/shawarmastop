@@ -4,9 +4,12 @@ import { Inter } from 'next/font/google';
 import { useCart } from '@/app/context/CartContext';
 import { useState } from 'react';
 import { addToCartDatabase } from '@/lib/api';
+import { Poppins } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] });
-
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700']
+});
 export interface Product {
     id: number;
     title: string;
@@ -42,7 +45,7 @@ export default function Products({ items }: ProductGridProps) {
                 {marqueeItems.map((product, index) => (
                     <div
                         key={`${product.id}-${index}`}
-                        className="group relative w-[240px] shrink-0 overflow-hidden rounded-[12px] bg-[#F5F3ED] p-3 transition-shadow hover:shadow-xl md:w-[300px] md:rounded-[16px] md:p-6"
+                        className="group relative w-[260px] shrink-0 overflow-hidden rounded-[12px] bg-[#F5F3ED] p-3 transition-shadow hover:shadow-xl md:w-[300px] lg:w-[280px] md:rounded-[16px]  md:p-6"
                     >
                     {/* Badge — desktop only (md+), same as before */}
                     <div className="absolute right-3 top-3 z-10 hidden rounded-full bg-[#FFAB3C] px-2 py-1 text-[9px] font-bold text-white md:right-5 md:top-6 md:block md:px-4 md:py-1.5 md:text-[10px]">
@@ -58,13 +61,13 @@ export default function Products({ items }: ProductGridProps) {
                         />
                     </div>
 
-                    <h3 className="text-left text-[12px] font-bold leading-tight text-black md:mt-2 md:text-[18px]">
+                    <h3 className="text-left text-[12px] font-[700] leading-tight text-black md:mt-2 md:text-[18px]">
                         {product.title}
                     </h3>
 
                     {/* Below md: price + badge row (matches compact mobile UI) */}
                     <div className="mt-1 flex w-full items-center justify-between gap-2 md:hidden">
-                        <span className={`text-[13px] font-bold text-[#FF5733] ${inter.className}`}>
+                        <span className={`text-[13px] font-[400] text-[#FF5733] ${poppins.className}`}>
                             Rs {product.price}
                         </span>
                         <span className="shrink-0 rounded-full bg-[#FFAB3C] px-2 py-0.5 text-[9px] font-bold text-white">
@@ -96,11 +99,11 @@ export default function Products({ items }: ProductGridProps) {
                                     badge: product.badge,
                                 });
                             }}
-                            className="rounded-full bg-[#FF5733] px-[23px] py-[7px] cursor-pointer text-[14px] font-bold text-white transition-colors hover:bg-[#E64B29]"
+                            className="rounded-full bg-[#FF5733] px-[23px] py-[7px] cursor-pointer text-[14px] font-[400] text-white transition-colors hover:bg-[#E64B29]"
                         >
                             Add To Cart
                         </button>
-                        <span className={`text-[18px] font-bold text-black ${inter.className}`}>
+                        <span className={`text-[18px] font-[600] text-black ${poppins.className}`}>
                             Rs {product.price}
                         </span>
                     </div>
@@ -124,7 +127,7 @@ export default function Products({ items }: ProductGridProps) {
                                 badge: product.badge,
                             });
                         }}
-                        className="mt-2 w-full rounded-full bg-[#FF5733] py-2 text-center text-[11px] font-bold text-white transition-colors hover:bg-[#E64B29] md:hidden cursor-pointer"
+                        className="mt-2 w-full rounded-full bg-[#FF5733] py-2 text-center text-[10px] font-[200] text-white transition-colors hover:bg-[#E64B29] md:hidden cursor-pointer"
                     >
                         Add To Cart
                     </button>

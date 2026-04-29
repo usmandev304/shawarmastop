@@ -47,10 +47,6 @@ export default function HomeLocation() {
     return () => clearInterval(id);
   }, [index, isPaused]);
 
-  const bgTransition = reduceMotion
-    ? { duration: 0.2 }
-    : { duration: 0.95, ease: [0.22, 1, 0.36, 1] as const };
-
   const viewStoreHref =
     branchRouteById[current.id] ??
     (index === 3 || current.title.toLowerCase().includes("gulberg")
@@ -71,8 +67,9 @@ export default function HomeLocation() {
             }
           }}
         >
+          {/* Image Animation - Slides from Right Side */}
           <div className="absolute inset-0 z-0" aria-hidden>
-            <AnimatePresence mode="sync" initial={false}>
+            <AnimatePresence mode="popLayout" initial={false}>
               <motion.div
                 key={index}
                 className="absolute inset-0 bg-cover bg-no-repeat"
@@ -80,23 +77,27 @@ export default function HomeLocation() {
                   backgroundImage: `url('${current.image.src}')`,
                   backgroundPosition: current.focal,
                 }}
-                initial={
-                  reduceMotion
-                    ? { opacity: 1 }
-                    : { opacity: 1, x: direction > 0 ? "16%" : "-16%", scale: 1.06 }
-                }
-                animate={reduceMotion ? { opacity: 1 } : { opacity: 1, x: "0%", scale: 1.01 }}
-                exit={
-                  reduceMotion
-                    ? { opacity: 1 }
-                    : { opacity: 1, x: direction > 0 ? "-16%" : "16%", scale: 0.98 }
-                }
-                transition={bgTransition}
+                initial={{ 
+                  x: "100%",
+                  opacity: 0.8
+                }}
+                animate={{ 
+                  x: "0%",
+                  opacity: 1
+                }}
+                exit={{ 
+                  x: "-100%",
+                  opacity: 0.8
+                }}
+                transition={{
+                  duration: 0.5,
+                  ease: [0.25, 0.46, 0.45, 0.94]
+                }}
               />
             </AnimatePresence>
           </div>
 
-          <div className="absolute inset-0 z-1 backdrop-brightness-100 mix-blend-multiply pointer-events-none" />
+          <div className="absolute inset-0 z-1 bg-black/30 pointer-events-none" />
 
           <button
             type="button"
@@ -128,7 +129,7 @@ export default function HomeLocation() {
 
             <Link
               href={viewStoreHref}
-              className="bg-white text-[#E55A38] md:px-[90px]  md:text-[16px] text-[9px] md:px-8 md:py-4 px-7 py-3 rounded-full font-bold text-base hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 active:scale-95 shadow-md"
+              className="bg-white text-[#E55A38] md:px-[90px] md:text-[16px] text-[9px] md:px-8 md:py-4 px-7 py-3 rounded-full font-bold text-base hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 active:scale-95 shadow-md"
             >
               View store
             </Link>

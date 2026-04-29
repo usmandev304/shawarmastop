@@ -69,15 +69,18 @@ export default function Main() {
                 <Products items={products} />
 
                 {/* CallToAction — dynamic badges & button via props, reusable in any future file */}
-                <CallToAction
-                    badges={[
-                        { image: FastDelivery, alt: 'Fast Delivery', label: 'Fast Delivery' },
-                        { image: QualityFood,  alt: 'Quality Food',  label: 'Quality Food'  },
-                        { image: CashbyHand,   alt: 'Cash By Hand',  label: 'Cash By Hand'  },
-                    ]}
-                    buttonText="View All Food"
-                    buttonHref="/order"
-                />
+                <div className='lg:mt-3 flex justify-center w-full md:[&_button]:max-w-[430px] max-w-[400px] sm:max-w-[530px]'>
+                    {/* [&_a] ka matlab hai is div ke andar jo bhi Link ya Anchor tag hai uski width barha do */}
+                    <CallToAction
+                        badges={[
+                            { image: FastDelivery, alt: 'Fast Delivery', label: 'Fast Delivery' },
+                            { image: QualityFood, alt: 'Quality Food', label: 'Quality Food' },
+                            { image: CashbyHand, alt: 'Cash By Hand', label: 'Cash By Hand' },
+                        ]}
+                        buttonText="View All Food"
+                        buttonHref="/order"
+                    />
+                </div>
             </div>
             <WhyChooseUs />
         </>

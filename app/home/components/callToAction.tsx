@@ -2,6 +2,12 @@
 import { Fragment } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
+import { Poppins } from 'next/font/google';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700']
+});
 
 interface Badge {
     image: StaticImageData;
@@ -21,7 +27,7 @@ export default function CallToAction({
     buttonHref,
 }: CallToActionProps) {
     return (
-        <div className="flex w-full flex-col items-center gap-3 px-0 sm:px-[40px] md:mt-[58px] md:gap-2 md:px-0">
+        <div className={`flex w-full flex-col items-center gap-3 px-0 sm:px-[40px] md:mt-[58px] md:gap-2 md:px-0 ${poppins.className}`}>
             {/* Feature Badges — sm only: single row + dividers; below sm & md+: wrap + gaps (current) */}
             <div className="flex flex-wrap items-center justify-center gap-2 sm:flex-nowrap sm:gap-0 md:mt-0 mt-[30px] md:flex-wrap md:gap-4">
                 {badges.map((badge, index) => (
@@ -38,7 +44,7 @@ export default function CallToAction({
                                 alt={badge.alt}
                                 className="h-4 w-[22px] object-contain sm:h-[16px] sm:w-[25px] md:h-[16px] md:w-[25px]"
                             />
-                            <span className="text-[10px] font-semibold text-[#171717] sm:text-[12px] md:text-[12px]">
+                            <span className="text-[10px] font-[500] text-[#171717] sm:text-[12px] md:text-[12px]">
                                 {badge.label}
                             </span>
                         </div>
@@ -47,8 +53,8 @@ export default function CallToAction({
             </div>
 
             {/* CTA Button — sm: wide centered pill; md+: original wide padding */}
-            <Link href={buttonHref} className="flex w-full justify-center md:block md:w-auto md:max-w-[700px] max-w-[400px] md:p-0 p-2.5 pt-0">
-                <button className="w-full max-w-full cursor-pointer rounded-full bg-[#FF5733] px-6 py-[15px] text-center text-[15px] font-bold text-white transition-colors hover:bg-[#E64B29] sm:max-w-xl md:w-auto md:max-w-[700px] md:px-[150px] md:text-[16px]">
+            <Link href={buttonHref} className="flex w-full justify-center md:block md:w-auto md:max-w-[700px] max-w-[400px] sm:max-w-[610px] max-w-[500px] md:p-0 p-2.5 pt-0">
+                <button className="w-full max-w-full cursor-pointer rounded-full bg-[#FF5733] px-6 py-[15px] text-center text-[15px] font-bold text-white transition-colors hover:bg-[#E64B29] sm:max-w-xl md:w-[500px] md:max-w-[700px] md:px-[150px] md:text-[16px]">
                     {buttonText}
                 </button>
             </Link>

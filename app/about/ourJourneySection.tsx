@@ -34,12 +34,11 @@ const slides = [
   }
 ];
 
-
-
 export default function OurJourneySection() {
   const [current, setCurrent] = useState(0);
   const isFirst = current === 0;
-const isLast = current === slides.length - 1;
+  const isLast = current === slides.length - 1;
+  
   const nextSlide = () => {
     if (current < slides.length - 1) {
       setCurrent(current + 1);
@@ -51,20 +50,31 @@ const isLast = current === slides.length - 1;
       setCurrent(current - 1);
     }
   };
+  
   return (
     <>
       <div className={`${poppins.className} flex min-h-screen items-center justify-center bg-white p-4 md:mb-[60px] md:p-8`}>
-        <div className="relative flex w-full max-w-[1320px] flex-col items-stretch gap-8 md:flex-row mditems-center md:justify-between">
-          <div className="relative sm:h-[480px] h-[350px] w-full shrink-0 overflow-hidden rounded-[16px] sm:h-[380px] md:h-[700px] md:max-w-[48%] lg:mb-7">
-            <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-[16px]">
-              <Image alt="" className="h-full w-full bg-cover sm:object-contain"
-                src={slides[current].image} />
+        <div className="relative flex w-full max-w-[1320px] flex-col items-stretch gap-8 md:flex-row md:items-center md:justify-between">
+          
+          {/* LEFT SIDE - FIXED */}
+          <div className="relative h-[350px] w-full shrink-0 overflow-hidden rounded-[16px] sm:h-[380px] md:h-[500px] lg:h-[650px] md:max-w-[48%]">
+            <div className="relative h-full w-full overflow-hidden rounded-[16px] bg-gray-100">
+              <Image 
+                alt="Shawarma Stop journey image" 
+                className="object-cover"
+                src={slides[current].image}
+                fill
+                sizes="(max-width: 768px) 100vw, 48vw"
+                priority
+              />
             </div>
           </div>
+          
+          {/* RIGHT SIDE - Content */}
           <div className="flex w-full min-w-0 shrink-0 flex-col gap-[30px] md:max-w-[48%]">
             <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
               <div className="content-stretch flex flex-col lg:gap-[17.632px] md:gap-[10px] sm:gap-[14px] items-start leading-[0] relative shrink-0 w-full">
-                <div className="flex flex-col  justify-center not-italic relative shrink-0 lg:text-[40px] font-[600] md:text-[25px] sm:text-[30px] text-[20px] text-black w-full">
+                <div className="flex flex-col justify-center not-italic relative shrink-0 lg:text-[40px] font-[600] md:text-[25px] sm:text-[30px] text-[20px] text-black w-full">
                   <p className="leading-[44.08px]">Our Journey</p>
                 </div>
                 <div className="grid-rows-[max-content] inline-grid place-items-start relative shrink-0 w-full" data-name="subtext">
@@ -74,6 +84,7 @@ const isLast = current === slides.length - 1;
                 </div>
               </div>
             </div>
+            
             <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full">
               <div className="bg-[#fded8b] relative rounded-[16px] shrink-0 w-full">
                 <div className="content-stretch flex flex-col items-start p-[22px] relative size-full">
@@ -89,9 +100,15 @@ const isLast = current === slides.length - 1;
                   </div>
                 </div>
               </div>
-              <div className="relative rounded-[16px] shrink-0 w-full ">
-                <Image alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgOurJourney1} />
-                <div className="content-stretch flex flex-col items-start p-[22px] relative size-full">
+              
+              <div className="relative rounded-[16px] shrink-0 w-full min-h-[150px]">
+                <Image 
+                  alt="Shawarma background" 
+                  className="object-cover rounded-[16px]" 
+                  src={imgOurJourney1}
+                  fill
+                />
+                <div className="relative z-10 content-stretch flex flex-col items-start p-[22px] size-full">
                   <div className="content-stretch flex flex-col gap-[12px] items-start leading-[0] relative shrink-0 w-full">
                     <div className="flex flex-col font-['Poppins:SemiBold',sans-serif] justify-center not-italic relative shrink-0 lg:text-[24px] md:text-[20px] sm:text-[18px] text-[15px] font-[600] text-white w-full">
                       <p className="sm:leading-[normal] leading-[3px]">At the Moment</p>
@@ -105,20 +122,31 @@ const isLast = current === slides.length - 1;
                 </div>
               </div>
             </div>
+            
             <div className="content-stretch flex gap-[21.333px] items-center relative shrink-0">
               <div className="relative shrink-0 lg:size-[64px] md:size-[50px] sm:size-[40px] size-[30px]">
-                <svg className={`${isFirst ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'} absolute block inset-0 size-full`} fill="none" preserveAspectRatio="none" viewBox="0 0 64 64" onClick={prevSlide}>
+                <svg 
+                  className={`${isFirst ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'} absolute block inset-0 size-full`} 
+                  fill="none" 
+                  preserveAspectRatio="none" 
+                  viewBox="0 0 64 64" 
+                  onClick={prevSlide}
+                >
                   <g id="Group 39241">
-                    <circle cx="32" cy="32" id="Ellipse 1" r="31" stroke="var(--stroke-0, #F95233)" strokeWidth="2" />
-                    <path d={svgPaths.p1798fb00} fill="var(--fill-0, #F95233)" id="Vector" stroke="var(--stroke-0, #F95233)" strokeWidth="1.33333" />
+                    <circle cx="32" cy="32" id="Ellipse 1" r="31" stroke="#F95233" strokeWidth="2" />
+                    <path d={svgPaths.p1798fb00} fill="#F95233" id="Vector" stroke="#F95233" strokeWidth="1.33333" />
                   </g>
                 </svg>
               </div>
-              <button className={`${isLast ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'} block  relative shrink-0 lg:size-[64px] md:size-[50px] sm:size-[40px] size-[30px]`} onClick={nextSlide} disabled={isLast}>
+              <button 
+                className={`${isLast ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'} block relative shrink-0 lg:size-[64px] md:size-[50px] sm:size-[40px] size-[30px]`} 
+                onClick={nextSlide} 
+                disabled={isLast}
+              >
                 <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 64 64">
                   <g id="Group 39240">
-                    <circle cx="32" cy="32" id="Ellipse 1" r="31" stroke="var(--stroke-0, #F95233)" strokeWidth="2" />
-                    <path d={svgPaths.p298e5180} fill="var(--fill-0, #F95233)" id="Vector" stroke="var(--stroke-0, #F95233)" strokeWidth="1.33333" />
+                    <circle cx="32" cy="32" id="Ellipse 1" r="31" stroke="#F95233" strokeWidth="2" />
+                    <path d={svgPaths.p298e5180} fill="#F95233" id="Vector" stroke="#F95233" strokeWidth="1.33333" />
                   </g>
                 </svg>
               </button>

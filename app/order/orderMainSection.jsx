@@ -1,5 +1,4 @@
 'use client'
-
 import { useState, useCallback } from 'react';
 import Image from 'next/image';
 import SectionHeader from '../home/components/sectionHeader';
@@ -10,23 +9,17 @@ import { useCart } from '@/app/context/CartContext';
 import { addToCartDatabase } from '@/lib/api';
 import { menuItems } from './data/orderMenuItems';
 
-
 const poppins = Poppins({
     subsets: ['latin'],
     weight: ['400', '500', '600', '700']
 });
-
-
-// Categories
 const categories = ['Appetizers', 'Fatayers', 'Main Course', 'Dessert', 'Drink', 'Others'];
-
 const itemsByCategory = Object.fromEntries(
     categories.map((category) => [
         category,
         menuItems.filter((item) => item.category === category),
     ]),
 );
-
 function buildOrderCartPayload(item) {
     return {
         id: `order-${item.id}-${item.name}`,
@@ -59,17 +52,16 @@ export default function OrderMainSection() {
 
     return (
         <>
-            <section className={`bg-white min-h-screen md:p-8 p-4`}>
+            <section className={`${poppins.className} bg-white min-h-screen md:p-8 p-4`}>
                 <div className="max-w-[1360px] mx-auto">
-                    {/* Header Section */}
-                    <SectionHeader
-                        badgeImage={props}
-                        badgeAlt="Explore Our Menu"
-                        title="Explore Our Menu"
-                        description="Enjoy freshly made meals crafted with quality ingredients and great taste."
-                    />
-
-                    {/* Category Filter */}
+                    <div className='[&>div]:mt-0 [&>section]:pt-0'>
+                        <SectionHeader
+                            badgeImage={props}
+                            badgeAlt="Explore Our Menu"
+                            title="Explore Our Menu"
+                            description="Enjoy freshly made meals crafted with quality ingredients and great taste."
+                        />
+                    </div>
                     <div className={`${poppins.className} bg-[#f4f2ed] content-stretch flex md:gap-[12px] gap-[8px] items-center flex-wrap p-[8px] lg:rounded-[100px] rounded-[30px] mb-12 md:mt-[40px] w-fit mx-auto`}>
                         {categories.map((category) => (
                             <button
@@ -77,7 +69,7 @@ export default function OrderMainSection() {
                                 type="button"
                                 data-category={category}
                                 onClick={handleCategoryClick}
-                                className={`content-stretch flex md:h-[48px] h-[38px] cursor-pointer items-center justify-center md:text-[14px] font-[400] px-[16px] py-[10px] rounded-[100px] shrink-0 w-[90px] md:w-[130px] transition-colors ${selectedCategory === category
+                                className={`${poppins.className} content-stretch flex md:h-[48px] h-[38px] cursor-pointer items-center justify-center md:text-[14px] font-[500] px-[16px] py-[10px] rounded-[100px] shrink-0 w-[90px] md:w-[130px] transition-colors ${selectedCategory === category
                                     ? 'bg-[#f95233]'
                                     : 'bg-transparent hover:bg-[#f4e8e2]'
                                     }`}
@@ -90,16 +82,14 @@ export default function OrderMainSection() {
                         ))}
                     </div>
 
-                    {/* Below md: compact 2-col; md+: existing card + md:2 lg:4 cols */}
-                    <div className="mb-12 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-[18px] lg:grid-cols-4">
+                    <div className="mb-12 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-x-[4px] lg:grid-cols-4 gap-y-11">
                         {filteredItems.map((item) => {
                             const badgeIsRegular = item.badge === 'Regular';
                             return (
                                 <div
                                     key={item.id}
-                                    className={`${poppins.className} flex h-full flex-col rounded-2xl bg-[#f4f2ed] p-3 md:min-h-[442px] md:items-center md:rounded-[16px] md:p-[2px] md:pt-[25px]`}
+                                    className={`${poppins.className} flex h-full flex-col rounded-2xl bg-[#f4f2ed] p-3 md:min-h-[442px] md:items-center md:rounded-[16px] md:p-[6px] md:pt-[25px] max-w-[320px]`}
                                 >
-                                    {/* One image: compact frame below md, desktop frame md+; badge on image only md+ */}
                                     <div className="relative mx-auto mb-2 w-full max-w-[260px] shrink-0 md:mb-6">
                                         <div className="relative flex aspect-square w-full items-center justify-center overflow-hidden rounded-xl md:h-[213px] md:overflow-visible md:rounded-none md:bg-transparent">
                                             <Image
@@ -119,7 +109,6 @@ export default function OrderMainSection() {
                                         </div>
                                     </div>
 
-                                    {/* Compact body: below md */}
                                     <div className="flex min-h-0 flex-1 flex-col md:hidden">
                                         <p className="mb-1.5 line-clamp-2 text-left text-[13px] font-bold leading-tight text-gray-900  sm:text-[14px]">
                                             {item.name}
@@ -151,7 +140,6 @@ export default function OrderMainSection() {
                                         </button>
                                     </div>
 
-                                    {/* Desktop body: md+ */}
                                     <div className="hidden w-full flex-1 flex-col px-4 md:flex md:grow md:gap-[16px] md:pt-[5.571px]">
                                         <div className="flex w-full flex-col gap-[7.543px] text-black">
                                             <p className={`${poppins.className} w-full lg:text-[18px] text-[16px] font-[700] leading-[normal]`}>
@@ -185,7 +173,6 @@ export default function OrderMainSection() {
                         })}
                     </div>
 
-                    {/* View All Menu Button */}
                     <div className="flex justify-center md:pb-[50px]">
                         <button className="border-2 border-[#f95233] md:bg-white bg-[#f95233] content-stretch flex items-center justify-center md:px-[138px] px-[90px] py-[19px] rounded-[100px] hover:bg-[#f95233] hover:text-white transition-colors group">
                             <p className="font-['Poppins:Medium',sans-serif] leading-[normal] not-italic text-[14px]  text-[#f95233] group-hover:text-white whitespace-nowrap md:text-black text-white">

@@ -72,15 +72,14 @@ export default function FamilyMealSpecials() {
                 </div>
 
                 {/* Content */}
-                <div className="relative z-10 [&_img]:brightness-0 [&_img]:invert ">
-                    <SectionHeader
-                        // className="md:mb-1 mb-0 text-white" // Try passing the text color here
-                        badgeImage={props}
-                        badgeAlt="Family Specials"
-                        title="Family Meal Specials"
-                        description="Delicious family-sized meals perfect for sharing, saving, and enjoying together."
-                    />
-                </div>
+                <div className="relative z-10 [&_img]:brightness-0 [&_img]:invert [&_h2]:!text-white [&_p]:!text-white [&_span]:!text-white [&_div]:!text-white">
+    <SectionHeader
+        badgeImage={props}
+        badgeAlt="Family Specials"
+        title="Family Meal Specials"
+        description="Delicious family-sized meals perfect for sharing, saving, and enjoying together."
+    />
+</div>
                 <div className="relative z-10">
                     <div className="flex justify-center md:pb-[90px]">
                         <Products items={products} />

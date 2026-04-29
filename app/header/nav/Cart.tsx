@@ -4,6 +4,12 @@ import { X, Trash2, Plus, Minus } from 'lucide-react';
 import Image from 'next/image';
 import { useCart } from '@/app/context/CartContext';
 import Link from 'next/link';
+import { Poppins } from 'next/font/google';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700']
+});
 
 interface CartProps {
   isOpen: boolean;
@@ -32,14 +38,14 @@ export default function Cart({ isOpen, onClose }: CartProps) {
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex justify-end bg-black/50">
+    <div className={`${poppins.className} fixed inset-0 z-50 flex justify-end bg-black/50`}>
       <div className="absolute inset-0" onClick={onClose}></div>
 
-      <div className="relative w-full max-w-md bg-white h-full shadow-xl p-6 flex flex-col">
+      <div className="relative w-full max-w-[660px] bg-white h-full shadow-xl p-6 flex flex-col">
         {/* Header */}
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-bold text-black">Cart ({itemCount})</h2>
-          <button onClick={onClose} className="text-gray-500 hover:text-black">
+          <h2 className="text-2xl font-[600] text-black">Cart ({itemCount})</h2>
+          <button onClick={onClose} className="text-[#FF4D30] cursor-pointer">
             <X size={28} />
           </button>
         </div>
@@ -57,14 +63,15 @@ export default function Cart({ isOpen, onClose }: CartProps) {
                 />
               </div>
               <div className="flex-1">
-                <h3 className="font-bold text-black lg:text-lg text-[14px]">{item.name}</h3>
-                <p className="text-xs text-gray-500 mb-2">
+                <h3 className="font-[600] text-black lg:text-lg text-[14px] lg:leading-11">{item.name}</h3>
+                <p className="text-xs lg:text-[14px] text-gray-800 mb-2 lg:mb-4">
                   {typeof item.description === 'string'
                     ? item.description
                     : 'Freshly prepared and full of flavor.'}
                 </p>
 
                 <div className="flex items-center justify-between">
+                  <div className='flex gap-5'>
                   <div className="flex items-center border rounded-md border-gray-300 overflow-hidden">
                     <button
                       onClick={() => decrementItem(item.id)}
@@ -73,7 +80,7 @@ export default function Cart({ isOpen, onClose }: CartProps) {
                       <Minus size={14} />
                     </button>
 
-                    <span className="md:px-3 px-1.5 py-1 font-semibold text-black  md:text-[14px] text-[12px]">
+                    <span className="md:px-3 px-1 lg:px-5 py-1.5 lg:py-2 font-semibold text-black  md:text-[14px] text-[12px]">
                       {item.quantity}
                     </span>
 
@@ -90,7 +97,8 @@ export default function Cart({ isOpen, onClose }: CartProps) {
                   >
                     <Trash2 size={18} />
                   </button>
-                  <span className="font-bold text-black lg:text-lg text-[12px]">
+                  </div>
+                  <span className="font-[600] text-black lg:text-lg text-[12px]">
                     RS {item.price * item.quantity}
                   </span>
                 </div>
@@ -101,20 +109,20 @@ export default function Cart({ isOpen, onClose }: CartProps) {
 
         {/* Footer */}
         <div className="mt-auto pt-6 ">
-          <div className="flex justify-between lg:text-xl text-[16px] font-bold mb-4 text-black">
+          <div className="flex justify-between lg:text-xl text-[16px] font-[600] mb-4 text-black">
             <span>Subtotal:</span>
             <span className="text-[#FF4D30]">Rs {subtotal}</span>
           </div>
           <Link
             href="/checkout"
             onClick={onClose}
-            className="block w-full bg-[#FF4D30] text-white md:py-4 py-2 rounded-full font-bold md:text-lg text-[16px] hover:bg-[#e6452b] transition-colors shadow-lg active:scale-95 text-center"
+            className="block w-full bg-[#FF4D30] text-white md:py-4 py-2 rounded-full font-[500] md:text-lg text-[16px] hover:bg-[#e6452b] transition-colors shadow-lg active:scale-95 text-center"
           >
             Checkout
           </Link>
           <Link
             href="/order"
-            className="mt-3 block w-full  text-black hover:underline py-2 rounded-full md:text-lg text-[14px] text-center hover:bg-[#FFF1EE] transition-colors"
+            className="mt-3 block w-full  text-gray-600 hover:underline py-2 rounded-full md:text-lg text-[14px] text-center hover:bg-[#FFF1EE] transition-colors"
           >
             Continue Ordering
           </Link>

@@ -8,6 +8,12 @@ import ReviewSlider from "./ReviewSlider";
 import growthImg from '../../images/about/img5.png';
 import chefImg from '../../images/about/img6.png';
 import deliveryImg from '../../images/about/img7.png';
+import { Poppins } from 'next/font/google';
+
+const poppins = Poppins({
+    subsets: ['latin'],
+    weight: ['400', '500', '600', '700']
+});
 
 const features = [
     { id: 1, text: "Easy to Order" },
@@ -40,14 +46,15 @@ const details = [
 export default function WhyChooseUs() {
     return (
         <>
-            <section className="py-12 px-4 max-w-[1320px] mx-auto">
-                <SectionHeader
-                    badgeImage={props} // Keep this as 'props' since your import named it that
-                    badgeAlt="Shawarma Stop Icon" // Required prop
-                    title="What Makes Shawarma Stop the Best for Customers & Employees"
-                    description="" // Required prop - leave as empty string if you don't want text here
-                />
-
+            <section className={`md:py-12 lg:py-9 px-4 max-w-[1320px] mx-auto ${poppins.className}`}>
+                <div className="[&>div]:mt-0 [&>section]:pt-0 [&_h2]:max-w-[930px] [&_h2]:mx-auto [&_h2]:text-center [&_h2]:mb-1">
+                    <SectionHeader
+                        badgeImage={props} // Keep this as 'props' since your import named it that
+                        badgeAlt="Shawarma Stop Icon" // Required prop
+                        title="What Makes Shawarma Stop the Best for Customers & Employees"
+                        description="" // Required prop - leave as empty string if you don't want text here
+                    />
+                </div>
                 {/* Pill Buttons Container */}
                 <div className="mt-10 w-full flex justify-center md:block hidden">
                     <div className="flex flex-wrap justify-center gap-7 max-w-[1300px] w-full">
@@ -90,7 +97,7 @@ export default function WhyChooseUs() {
                             <h3 className="text-[#FF5733] text-[20px] lg:text-2xl md:text-[20px] sm:text-[18px] font-bold mb-4">
                                 {item.title}
                             </h3>
-                            <p className="text-[#363635] lg:text-[16px] md:text-[15px] text-[14px] leading-relaxed max-w-[350px]">
+                            <p className="text-[#363635] lg:text-[16px] md:text-[15px] text-[14px] leading-relaxed max-w-[410px]">
                                 {item.description}
                             </p>
                         </div>

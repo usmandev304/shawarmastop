@@ -25,7 +25,7 @@ export default function BrandQuote() {
     className="bg-cover"
   />
 </div>
-      <div className="text-center max-w-4xl mx-auto space-y-4  md:space-y-9 sm:space-y-[15px]  relative z-10">
+      <div className="text-center max-w-[1100px] mx-auto space-y-4  md:space-y-9 sm:space-y-[15px]  relative z-10">
         
         {/* Brand Logo */}
         <div className='flex justify-center'>
@@ -34,14 +34,14 @@ export default function BrandQuote() {
 
         {/* Main Brand Quote */}
         <div className='sm:mb-6 mb-3'>
-          <h2 className="px-1 text-[20px] font-semibold leading-tight text-white drop-shadow-lg sm:text-3xl md:text-5xl lg:text-[55px]">
+          <h2 className="px-1 text-[20px] font-semibold leading-tight text-white drop-shadow-lg sm:text-3xl md:text-5xl lg:text-[64px]">
             “Every meal is a chance to experience the world’s flavors, one bite at a time.”
           </h2>
         </div>
 
         {/* Tagline with Smiley */}
         <div>
-          <p className="text-white text-[15px] sm:text-[24px] font-medium drop-shadow-md">
+          <p className="text-white text-[15px] sm:text-[26px] font-medium drop-shadow-md">
             Shawarma That Stops You :)
           </p>
         </div>

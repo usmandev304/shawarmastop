@@ -8,8 +8,7 @@ export default function OrderLayout({
 }) {
   return (
     <section className="order-layout-wrapper bg-gray-50 min-h-screen">
-      {/* Agar aap Order page par koi extra header ya banner dikhana chahte hain to yahan add karein */}
-      {/* <Head /> */}
+     
 
       {children}
       {/* <Footer />       */}

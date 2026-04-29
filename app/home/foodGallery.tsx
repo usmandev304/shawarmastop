@@ -92,7 +92,7 @@ const VerticalLoopColumn = ({
         <div
             className="relative overflow-hidden"
             // Yahan humne height ko 911px par fix kar diya hai
-            style={{ height: '911px' }} 
+            style={{ height: '911px' }}
         >
             <motion.div
                 className="will-change-transform"
@@ -136,26 +136,27 @@ export default function FoodGallery() {
     return (
         <>
             <section className="bg-white">
-                <SectionHeader
-                    badgeImage={props}
-                    title="Our Food Gallery"
-                    description={
-                        <>
-                            Explore our Food Gallery and discover our freshly made favorites.
-                            For more delicious updates, follow us on Instagram{" "}
-                            <span className="text-[#FF5733] font-semibold">
+            
+                    <SectionHeader
+                        badgeImage={props}
+                        title="Our Food Gallery"
+                        description={
+                            <div className='leading-[1.8]'>
+                                Explore our Food Gallery and discover our freshly made favorites.
+                                For more delicious updates, follow us on Instagram{" "}
+                                <span className="text-[#FF5733] font-semibold">
 
-                                <a href="https://www.instagram.com/shawarmastop/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    @shawarmastop.
-                                </a>
-                            </span>
-                        </>
-                    }
-                />
-
+                                    <a href="https://www.instagram.com/shawarmastop/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        @shawarmastop.
+                                    </a>
+                                </span>
+                            </div>
+                        }
+                    />
+             
                 <div className="px-4 lg:pt-5 max-w-[1340px] mx-auto space-y-4">
 
                     <div className="grid grid-cols-2 sm:grid-cols-2 lg:hidden gap-4">
@@ -181,6 +182,7 @@ export default function FoodGallery() {
                     </div>
                 </div>
             </section>
+            <div className='w-full flex justify-center  md:[&_button]:max-w-[460px] max-w-[400px] m-auto sm:max-w-[530px]'>
             <CallToAction
                 badges={[
                     { image: FastDelivery, alt: 'Fast Delivery', label: 'Fast Delivery' },
@@ -190,6 +192,7 @@ export default function FoodGallery() {
                 buttonText="View on Instagram"
                 buttonHref="https://www.instagram.com/shawarmastop/"
             />
+            </div>
             <Testimonial />
         </>
     );

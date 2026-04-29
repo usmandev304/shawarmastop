@@ -8,7 +8,7 @@ export default function ProfileGroupLayout({
     return (
       <section className="profile-layout-wrapper min-h-screen bg-white">
         {children}
-        <ProfileFooter />
+        {/* <ProfileFooter /> */}
       </section>
     );
   }

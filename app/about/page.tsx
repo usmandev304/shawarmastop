@@ -19,11 +19,11 @@ export default function About() {
                         <div className="flex w-full flex-col gap-4 text-white">
                             <p className="text-[18px] leading-[28px] md:text-[20px]">Craving&apos;s Story</p>
                             <div className="capitalize leading-tight ">
-                                <p className="mb-0 text-[clamp(2rem,8vw,5rem)] font-[700] leading-[1.1] lg:text-[4vw] md:text-[5vw] lg:leading-[90px] md:leading-[60px]">{`Savour the `}</p>
-                                <p className={`${poppins.className} mb-0 text-[clamp(2rem,8vw,5rem)] font-[700] leading-[1.1] lg:text-[4vw] md:text-[5vw] lg:leading-[90px] md:leading-[60px]`}>Shawarma Stop</p>
-                                <p className="text-[clamp(2rem,8vw,5rem)] font-[700] leading-[1.1] lg:text-[4vw] md:text-[5vw] lg:leading-[90px] md:leading-[60px]">Difference</p>
+                                <p className="mb-0 text-[clamp(2rem,8vw,5rem)] font-[700] leading-[1.1] lg:text-[4.8vw] md:text-[5vw] lg:leading-[90px] md:leading-[60px]">{`Savour the `}</p>
+                                <p className={`${poppins.className} mb-0 text-[clamp(2rem,8vw,5rem)] font-[700] leading-[1.1] lg:text-[4.8vw] md:text-[5vw] lg:leading-[90px] md:leading-[60px]`}>Shawarma Stop</p>
+                                <p className="text-[clamp(2rem,8vw,5rem)] font-[700] leading-[1.1] lg:text-[4.8vw] md:text-[5vw] lg:leading-[90px] md:leading-[60px]">Difference</p>
                             </div>
-                            <p className="max-w-xl lg:text-[19px] md:text-[17px] text-[15px] leading-[26px] md:leading-[28px]">
+                            <p className="max-w-xl lg:max-w-[590px] lg:text-[19px] md:text-[17px] text-[15px] leading-[26px] md:leading-[28px]">
                                 Dive into a world of delicious flavors and ethical sourcing practices. Our commitment to quality ensures every bite is as good as it looks.
                             </p>
                         </div>

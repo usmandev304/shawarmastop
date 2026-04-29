@@ -42,20 +42,20 @@ export default function ContactHeader() {
 
   const handleSubmit = (e: React.FormEvent) => {
     // 1. Page reload ko rokne ke liye
-    e.preventDefault(); 
-    
+    e.preventDefault();
+
     // 2. Validation check karein
     if (validate()) {
       console.log('Form Submitted:', formData);
       alert('Thank you! Your message has been sent.');
-      
+
       // 3. Form reset karein
       setFormData({ name: '', phone: '', email: '', comment: '' });
     }
   };
 
   return (
-    <section className="max-w-4xl mx-auto px-6 py-16 font-sans text-[#1a1a1a]">
+    <section className="max-w-4xl mx-auto px-6 py-16 font-sans text-[#1a1a1a] lg:mb-14">
       {/* Top Text Content */}
       <div className="mb-10">
         <p className="text-xl md:text-2xl text-[17px] leading-relaxed mb-8 text-gray-800">
@@ -125,7 +125,7 @@ export default function ContactHeader() {
 
         <button
           type="submit"
-         className="bg-[#FF5A35] hover:bg-[#e44e2b] cursor-pointer text-white font-semibold py-3 px-16 rounded-full transition-colors duration-200 md:text-lg text-[15px] shadow-sm w-full md:w-auto"
+          className="bg-[#FF5A35] hover:bg-[#e44e2b] cursor-pointer text-white font-[500] py-4 px-21 rounded-full transition-colors duration-200 md:text-lg lg:text-[19px] text-[15px] shadow-sm w-full md:w-auto"
         >
           Send
         </button>

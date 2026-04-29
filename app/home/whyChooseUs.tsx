@@ -46,10 +46,7 @@ export default function WhyChooseUs() {
                     </div>
                 </div>
 
-                {/* ── Right: Content Section ── */}
-                {/* ADJUSTED WIDTH TO 50% */}
                 <div className="w-full md:w-[50%] flex flex-col lg:gap-2.5 md:gap-0 gap-3">
-                    {/* Label with Icon */}
                     <div className="flex items-center md:gap-1">
                         <div className="p-1 rounded-sm">
                             <Image
@@ -68,7 +65,7 @@ export default function WhyChooseUs() {
                         Why people Choose us?
                     </h2>
 
-                    <p className="lg:text-[16px] md:text-[14px] font-[400] md:mt-[10px] sm:text-[15px] text-[12px] leading-relaxed max-w-[560px]">
+                    <p className="lg:text-[16px] md:text-[14px] font-[400] md:mt-[10px] sm:text-[15px] text-[12px] leading-relaxed max-w-[620px]">
                         ShawarmaStop brings you authentic Middle Eastern flavors with freshly made
                         shawarmas, premium ingredients, and traditional spices—served with bold
                         taste and quality you can trust.
@@ -86,8 +83,8 @@ export default function WhyChooseUs() {
                                     />
                                 </div>
                                 <div>
-                                    <h3 className="lg:text-[18px] md:text-[14px] sm:text-[15px] text-[14px] font-[700]">{feature.title}</h3>
-                                    <p className="lg:text-[16px] md:text-[12px] sm:text-[13px] text-[12px] font-[400] mt-1 leading-relaxed max-w-[510px]">
+                                    <h3 className="lg:text-[19px] md:text-[14px] sm:text-[15px] text-[14px] font-[600]">{feature.title}</h3>
+                                    <p className="lg:text-[16px] md:text-[12px] sm:text-[13px] text-[12px] font-[400] mt-1 leading-relaxed max-w-[570px]">
                                         {feature.description}
                                     </p>
                                 </div>
