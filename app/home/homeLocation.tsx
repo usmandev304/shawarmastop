@@ -57,7 +57,7 @@ export default function HomeLocation() {
     <>
       <section className="px-4 pt-9 md:pb-[140px] pb-[100px] flex justify-center">
         <div
-          className="relative w-full max-w-[1300px] m-auto md:min-h-[400px] sm:min-h-[350px] h-[210px] md:rounded-[20px] rounded-[10px] overflow-hidden flex flex-col items-center justify-center text-center shadow-xl bg-neutral-900"
+          className="relative w-full max-w-[1300px] m-auto md:min-h-[420px] sm:min-h-[350px] h-[210px] md:rounded-[20px] rounded-[10px] overflow-hidden flex flex-col items-center justify-center text-center shadow-xl bg-neutral-900"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           onFocusCapture={() => setIsPaused(true)}
@@ -68,7 +68,7 @@ export default function HomeLocation() {
           }}
         >
           {/* Image Animation - Slides from Right Side */}
-          <div className="absolute inset-0 z-0" aria-hidden>
+          <div className="absolute inset-0 z-0 brightness-140"  aria-hidden>
             <AnimatePresence mode="popLayout" initial={false}>
               <motion.div
                 key={index}

@@ -54,7 +54,7 @@ export default function CallToAction({
 
             {/* CTA Button — sm: wide centered pill; md+: original wide padding */}
             <Link href={buttonHref} className="flex w-full justify-center md:block md:w-auto md:max-w-[700px] max-w-[400px] sm:max-w-[610px] max-w-[500px] md:p-0 p-2.5 pt-0">
-                <button className="w-full max-w-full cursor-pointer rounded-full bg-[#FF5733] px-6 py-[15px] text-center text-[15px] font-bold text-white transition-colors hover:bg-[#E64B29] sm:max-w-xl md:w-[500px] md:max-w-[700px] md:px-[150px] md:text-[16px]">
+                <button className="w-full max-w-full cursor-pointer rounded-full bg-[#FF5733] px-6 py-[15px] text-center text-[15px] font-[500] text-white transition-colors hover:bg-[#E64B29] sm:max-w-xl md:w-[500px] md:max-w-[700px] md:px-[10px] md:text-[16px]">
                     {buttonText}
                 </button>
             </Link>

@@ -72,7 +72,7 @@ export default function Navbar() {
         }
       >
         <div className="max-w-[1317px] mx-auto flex items-center justify-between ">
-          <div className="flex items-center w-full md:w-auto justify-between lg:gap-[50px] md:gap-[20px]">
+          <div className="flex items-center w-full md:w-auto justify-between lg:gap-[55px] md:gap-[20px]">
             <button
               className="md:hidden"
               type="button"

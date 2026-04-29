@@ -63,9 +63,10 @@ export default function PiaBranchPage() {
           </div>
         }
       />
-      <div className='mx-auto flex max-w-[1387px] flex-col items-center px-4'>
+      <div className='mx-auto flex max-w-[1387px] flex-col items-center px-4 '>
         <Image src={img1} alt='img1' className='hidden md:block' />
         <Image src={smImage} alt='img1' className='block md:hidden mt-8' />
+        <div className="w-full md:[&_button]:max-w-[460px] max-w-[400px] sm:max-w-[530px]">
         <CallToAction
           badges={[
             { image: FastDelivery, alt: 'Fast Delivery', label: 'Fast Delivery' },
@@ -75,6 +76,7 @@ export default function PiaBranchPage() {
           buttonText="View more on Instagram"
           buttonHref="https://www.instagram.com/shawarmastop/"
         />
+      </div>
       </div>
        <section className={`${poppins.className} mx-auto md:mt-10 mb-30 w-full max-w-[1387px] m-auto overflow-hidden rounded-[12px]`}>
         <div className="md:mt-40 mb-10">
