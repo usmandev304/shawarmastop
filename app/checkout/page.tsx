@@ -266,7 +266,7 @@ export default function CheckoutPage() {
         <OrderSuccessModal
           isOpen={showModal}
           orderId={finalOrderId}
-          deliveryTime="20-30 minutes"
+          deliveryTime="25 min"
           // 3. Yahan 'finalTotal' use karein
           totalAmount={finalTotal}
         />

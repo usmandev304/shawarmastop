@@ -8,6 +8,7 @@ import appStore from '../../images/home-mobileSection/app-store.png'
 import mobilesm from '../../images/home-mobileSection/mobilesm.png'
 import FaqSection from './faqSection';
 
+
 export default function MobileAppSection() {
   return (
     <>
@@ -45,7 +46,7 @@ export default function MobileAppSection() {
             Download Our Mobile App
             <br /> Its Very Simple & Easy
           </h2>
-          <p className="text-black font-sans leading-relaxed md:max-w-[450px] max-w-[390px] text-start lg:text-[18px] md:text-[14px] sm:text-[17px] text-[15px]">
+          <p className="text-black font-sans leading-relaxed md:max-w-[510px] max-w-[390px] text-start lg:text-[18px] md:text-[14px] sm:text-[17px] text-[15px]">
             Our mobile app is now available on Android and iOS—making it easier 
             than ever to order, track, and enjoy your favorite Meal.
           </p> 
@@ -53,7 +54,7 @@ export default function MobileAppSection() {
 
         {/* App Store Buttons */}
         <div className="md:space-y-3 text-start text-center">
-          <h3 className="text-2xl font-bold md:mt-7 sm:mt-4 sm:mb-4 mt-6 mb-4">Get the App</h3>
+          <h3 className="text-2xl font-[600] md:mt-7 sm:mt-4 sm:mb-4 mt-6 mb-4">Get the App</h3>
           <div className="flex flex-wrap justify-center justify-start gap-4">
             <Link href="#" className="transition-transform ">
               <Image 

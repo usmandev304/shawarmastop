@@ -5,7 +5,7 @@ export default function DownloadMenu() {
     return (
         <>
     <section className="bg-[#F95233] flex justify-center items-center py-[70px] px-4">
-  <div className="relative w-full max-w-[1200px]">
+  <div className="relative w-full max-w-[1200px]  lg:mt-16">
     <Image
       src={menu}
       alt="menu"

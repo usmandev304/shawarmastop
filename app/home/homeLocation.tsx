@@ -52,10 +52,9 @@ export default function HomeLocation() {
     (index === 3 || current.title.toLowerCase().includes("gulberg")
       ? "/gullbery-branch"
       : (`/order?from=location&branch=${index}` as const));
-
   return (
     <>
-      <section className="px-4 pt-9 md:pb-[140px] pb-[100px] flex justify-center">
+      <section className="px-4 pt-9 md:pb-[130px] pb-[100px] flex justify-center">
         <div
           className="relative w-full max-w-[1300px] m-auto md:min-h-[420px] sm:min-h-[350px] h-[210px] md:rounded-[20px] rounded-[10px] overflow-hidden flex flex-col items-center justify-center text-center shadow-xl bg-neutral-900"
           onMouseEnter={() => setIsPaused(true)}
@@ -67,8 +66,7 @@ export default function HomeLocation() {
             }
           }}
         >
-          {/* Image Animation - Slides from Right Side */}
-          <div className="absolute inset-0 z-0 brightness-140"  aria-hidden>
+          <div className="absolute inset-0 z-0 brightness-140" aria-hidden>
             <AnimatePresence mode="popLayout" initial={false}>
               <motion.div
                 key={index}
@@ -77,15 +75,15 @@ export default function HomeLocation() {
                   backgroundImage: `url('${current.image.src}')`,
                   backgroundPosition: current.focal,
                 }}
-                initial={{ 
+                initial={{
                   x: "100%",
                   opacity: 0.8
                 }}
-                animate={{ 
+                animate={{
                   x: "0%",
                   opacity: 1
                 }}
-                exit={{ 
+                exit={{
                   x: "-100%",
                   opacity: 0.8
                 }}
@@ -129,7 +127,7 @@ export default function HomeLocation() {
 
             <Link
               href={viewStoreHref}
-              className="bg-white text-[#E55A38] md:px-[90px] md:text-[16px] text-[9px] md:px-8 md:py-4 px-7 py-3 rounded-full font-bold text-base hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 active:scale-95 shadow-md"
+              className="bg-white text-[#E55A38] md:px-[88px] md:text-[16px] text-[9px] md:px-8 md:py-4.5 px-7 py-3 rounded-full font-bold text-base hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 active:scale-95 shadow-md"
             >
               View store
             </Link>

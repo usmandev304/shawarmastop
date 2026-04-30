@@ -50,8 +50,14 @@ export default function Location() {
     setFormHint('');
     setSelectedLocation(trimmed);
     console.log('Location saved:', trimmed);
-    setIsOpen(false);
     localStorage.setItem('userLocation', trimmed);
+    void saveUserLocationToBackend({
+      locationText: trimmed,
+      latitude: null,
+      longitude: null,
+      source: 'manual',
+    });
+    setIsOpen(false);
   };
 
   const handleUseCurrentLocation = () => {

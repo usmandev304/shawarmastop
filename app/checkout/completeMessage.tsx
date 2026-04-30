@@ -17,14 +17,14 @@ export function OrderSuccessModal({ isOpen, orderId, deliveryTime, totalAmount }
 
   return (
     <div className={`${poppins.className} fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm px-7`}>
-      <div className="bg-white rounded-[32px] w-full max-w-[600px] p-8 flex flex-col items-center shadow-2xl animate-in fade-in zoom-in duration-300">
-
+      <div className="bg-white rounded-[32px] w-full max-w-[600px] p-8 lg:p-15 flex flex-col items-center shadow-2xl animate-in fade-in zoom-in duration-300">
+ 
         {/* Green Check Icon */}
-        <div className="  rounded-full flex items-center justify-center lg:mb-1">
-          <Image src={completeorder} alt="Order Complete" className='lg:w-5vw md:w-4vw w-29 ' />
+        <div className="rounded-full flex items-center justify-center lg:mb-1">
+          <Image src={completeorder} alt="Order Complete" className='lg:w-[200px] md:w-4vw w-29 ' />
         </div>
 
-        <h2 className="md:text-[28px] text-[22px] font-[600] text-black mb-2 text-center">Order Confirmed</h2>
+        <h2 className="md:text-[28px] text-[22px] font-[600] text-black mb-2.5 text-center">Order Confirmed</h2>
         <p className="text-[#9A9A9A] text-center mb-8 font-[400] md:text-[16px] text-[14px]">
           Your food is being prepared and will arrive soon.
         </p>
@@ -44,7 +44,6 @@ export function OrderSuccessModal({ isOpen, orderId, deliveryTime, totalAmount }
             <span className="text-[#555555] font-bold text-lg  md:text-[18px] text-[16px]">Rs {totalAmount}</span>
           </div>
         </div>
-
         {/* Back to Menu Button */}
         <Link
           href="/order"

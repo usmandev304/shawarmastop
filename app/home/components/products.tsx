@@ -45,7 +45,7 @@ export default function Products({ items }: ProductGridProps) {
                 {marqueeItems.map((product, index) => (
                     <div
                         key={`${product.id}-${index}`}
-                        className="group relative w-[260px] shrink-0 overflow-hidden rounded-[12px] bg-[#F5F3ED] p-3 transition-shadow hover:shadow-xl md:w-[300px] lg:w-[280px] md:rounded-[16px]  md:p-6"
+                        className="group relative w-[260px] shrink-0 overflow-hidden rounded-[12px] bg-[#F5F3ED] p-3 transition-shadow hover:shadow-xl md:w-[300px] lg:w-[290px] md:rounded-[16px]  md:p-6"
                     >
                     {/* Badge — desktop only (md+), same as before */}
                     <div className="absolute right-3 top-3 z-10 hidden rounded-full bg-[#FFAB3C] px-2 py-1 text-[9px] font-bold text-white md:right-5 md:top-6 md:block md:px-4 md:py-1.5 md:text-[10px]">
@@ -53,11 +53,11 @@ export default function Products({ items }: ProductGridProps) {
                     </div>
 
                     {/* Image */}
-                    <div className="relative mb-2 flex h-[120px] w-full items-center justify-center overflow-hidden rounded-xl md:mb-4 md:h-[220px] md:rounded-2xl">
+                    <div className="relative mb-2 flex h-[120px] w-full items-center justify-center overflow-hidden rounded-xl md:mb-4 md:h-[230px] md:rounded-2xl">
                         <Image
                             src={product.image}
                             alt={product.title}
-                            className="h-full w-[92%] object-contain transition-transform duration-300 group-hover:scale-105 md:w-[90%]"
+                            className="h-full w-[92%] object-contain transition-transform duration-300 group-hover:scale-105 md:w-[100%]"
                         />
                     </div>
 
@@ -75,7 +75,7 @@ export default function Products({ items }: ProductGridProps) {
                         </span>
                     </div>
 
-                    <p className="mt-1 line-clamp-2 text-left text-[11px] leading-snug text-[#333] md:mt-2 md:line-clamp-none md:max-w-[250px] md:text-[15px] md:font-[500] md:text-black">
+                    <p className="mt-1 line-clamp-2 text-left text-[11px] leading-snug text-[#333] md:mt-2 md:line-clamp-none md:max-w-[230px] md:text-[15px] md:font-[500] md:text-black">
                         {product.description}
                     </p>
 
